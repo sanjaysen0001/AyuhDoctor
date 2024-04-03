@@ -89,17 +89,19 @@ class AnalyticsDashboard extends React.Component {
     return (
       <React.Fragment>
         <Card>
-          <CardTitle className="ast-3">Patient</CardTitle>
+           
+          <CardTitle className="ast-3">Dashboard</CardTitle>
           <hr></hr>
+           
           <CardBody>
             <Row className="match-height">
               <Col md="4" className="mt-1 mb-1">
                 <div className="bg-t">
                   <span className="ast-1">
-                    <Icon.Users size={40} className="mr-50" />
+                    <Icon.User size={40} className="mr-50" />
                   </span>
                   <h2 className="ast-2">
-                    Total Users
+                    Total Patient
                     <span className="ast-4">{this.state.userCount}</span>
                   </h2>
                 </div>
@@ -107,10 +109,10 @@ class AnalyticsDashboard extends React.Component {
               <Col md="4" className="mt-1 mb-1">
                 <div className="bg-s">
                   <span className="ast-1">
-                    <Icon.Users size={40} className="mr-50" />
+                    <Icon.FileText size={40} className="mr-50" />
                   </span>
                   <h2 className="ast-2">
-                    Active Users
+                    Total Appointment
                     <span className="ast-4">{this.state.ActiveUser}</span>
                   </h2>
                 </div>
@@ -118,184 +120,85 @@ class AnalyticsDashboard extends React.Component {
               <Col md="4" className="mt-1 mb-1">
                 <div className="bg-p">
                   <span className="ast-1">
-                    <Icon.Users size={40} className="mr-50" />
+                    <Icon.FileText size={40} className="mr-50" />
                   </span>
                   <h2 className="ast-2">
-                    Inactive Users
+                  New Appointment
                     <span className="ast-4">{this.state.InActiveUser}</span>
                   </h2>
                 </div>
               </Col>
+              <Col md="4" className="mt-1 mb-1">
+                <div style={{backgroundColor:'teal'}} className="bg-p">
+                  <span className="ast-1">
+                    <Icon.Users size={40} className="mr-50" />
+                  </span>
+                  <h2 className="ast-2">
+                 Total Prescription
+                    <span className="ast-4">{this.state.InActiveUser}</span>
+                  </h2>
+                </div>
+              </Col>
+              <Col md="4" className="mt-1 mb-1">
+              <div style={{backgroundColor:'violet'}} className="bg-p">
+                <span className="ast-1">
+                  <Icon.Mail size={40} className="mr-50" />
+                </span>
+                <h2 className="ast-2">
+               Today SMS
+                  <span className="ast-4">{this.state.InActiveUser}</span>
+                </h2>
+              </div>
+            </Col>
+              <Col md="4" className="mt-1 mb-1">
+                <div style={{backgroundColor:'orange'}} className="bg-p">
+                  <span className="ast-1">
+                    <Icon.Mail size={40} className="mr-50" />
+                  </span>
+                  <h2 className="ast-2">
+                 Total SMS
+                    <span className="ast-4">{this.state.InActiveUser}</span>
+                  </h2>
+                </div>
+              </Col>
+              <Col md="4" className="mt-1 mb-1">
+              <div style={{backgroundColor:'tan'}} className="bg-p">
+                <span className="ast-1">
+                  <Icon.Mail size={40} className="mr-50" />
+                </span>
+                <h2 className="ast-2">
+               Custom SMS
+                  <span className="ast-4">{this.state.InActiveUser}</span>
+                </h2>
+              </div>
+            </Col>
+            <Col md="4" className="mt-1 mb-1">
+              <div style={{backgroundColor:'steelblue'}} className="bg-p">
+                <span className="ast-1">
+                  <Icon.Mail size={40} className="mr-50" />
+                </span>
+                <h2 className="ast-2">
+               Send Total Email
+                  <span className="ast-4">{this.state.InActiveUser}</span>
+                </h2>
+              </div>
+            </Col>
+
             </Row>
           </CardBody>
         </Card>
 
-        <Card>
-          <CardTitle className="ast-3">Doctor</CardTitle>
-          <hr></hr>
-          <CardBody>
-            <Row className="match-height">
-              <Col md="3" className="mt-1 mb-1">
-                <div className="bg-t">
-                  <span className="ast-1">
-                    <Icon.User size={40} className="mr-50" />
-                  </span>
-                  <h2 className="ast-2">
-                    Total
-                    <span className="ast-4">
-                      {this.state.AstroCount +
-                        this.state.busyAstroCount +
-                        this.state.OfflineAstroCount}
-                    </span>
-                  </h2>
-                </div>
-              </Col>
-              <Col md="3" className="mt-1 mb-1">
-                <div className="bg-s">
-                  <span className="ast-1">
-                    <Icon.User size={40} className="mr-50" />
-                  </span>
-                  <h2 className="ast-2">
-                    Online
-                    <span className="ast-4">{this.state.AstroCount}</span>
-                  </h2>
-                </div>
-              </Col>
-              <Col md="3" className="mt-1 mb-1">
-                <div className="bg-u">
-                  <span className="ast-1">
-                    <Icon.User size={40} className="mr-50" />
-                  </span>
-                  <h2 className="ast-2">
-                    Busy
-                    <span className="ast-4">{this.state.busyAstroCount}</span>
-                  </h2>
-                </div>
-              </Col>
-              <Col md="3" className="mt-1 mb-1">
-                <div className="bg-p">
-                  <span className="ast-1">
-                    <Icon.User size={40} className="mr-50" />
-                  </span>
-                  <h2 className="ast-2">
-                    Offline
-                    <span className="ast-4">
-                      {this.state.OfflineAstroCount}
-                    </span>
-                  </h2>
-                </div>
-              </Col>
-            </Row>
-          </CardBody>
-        </Card>
+     
 
         {/* call management counter */}
 
-        <Card>
-          <CardTitle className="ast-3">Call Management</CardTitle>
-          <hr></hr>
-          <CardBody>
-            <Row className="match-height">
-              <Col md="4" className="mt-1 mb-1">
-                <div className="bg-s">
-                  <span className="ast-1">
-                    <Icon.PhoneCall size={40} className="mr-50" />
-                  </span>
-                  <h2 className="ast-2">
-                    Complete Call
-                    <span className="ast-4">{this.state.completecall}</span>
-                  </h2>
-                </div>
-              </Col>
-              <Col md="4" className="mt-1 mb-1">
-                <div className="bg-p">
-                  <span className="ast-1">
-                    <Icon.PhoneCall size={40} className="mr-50" />
-                  </span>
-                  <h2 className="ast-2">
-                    failed Call
-                    <span className="ast-4">{this.state.failed}</span>
-                  </h2>
-                </div>
-              </Col>
-              <Col md="4" className="mt-1 mb-1">
-                <div className="bg-u">
-                  <span className="ast-1">
-                    <Icon.PhoneCall size={40} className="mr-50" />
-                  </span>
-                  <h2 className="ast-2">
-                    Rejected Call
-                    <span className="ast-4">{this.state.Rejected}</span>
-                  </h2>
-                </div>
-              </Col>
-            </Row>
-          </CardBody>
-        </Card>
+       
 
         {/* Earning management counter */}
 
-        <Card>
-          <CardTitle className="ast-3">Earning</CardTitle>
-          <hr></hr>
-          <CardBody>
-            <Row className="match-height">
-              <Col md="4" className="mt-1 mb-1">
-                <div className="bg-s">
-                  <span style={{ fontSize: "25px" }} className="ast-1 mt-1">
-                    <b>Rs</b>
-                  </span>
-                  <h2 className="ast-2">
-                    Admin Earning
-                    <span className="ast-4">{this.state.adminearning}</span>
-                  </h2>
-                </div>
-              </Col>
-            </Row>
-          </CardBody>
-        </Card>
+       
 
-        <Card>
-          <CardTitle className="ast-3">Package</CardTitle>
-          <hr></hr>
-          <CardBody>
-            <Row className="match-height">
-              <Col md="4" className="mt-1 mb-1">
-                <div className="bg-s">
-                  <span className="ast-1">
-                    <Icon.Gift size={40} className="mr-50" />
-                  </span>
-                  <h2 className="ast-2">
-                    Total Offer
-                    <span className="ast-4">{this.state.packageoffer}</span>
-                  </h2>
-                </div>
-              </Col>
-              <Col md="4" className="mt-1 mb-1">
-                <div className="bg-p">
-                  <span className="ast-1">
-                    <Icon.CheckCircle size={40} className="mr-50" />
-                  </span>
-                  <h2 className="ast-2">
-                    Total Recharge
-                    <span className="ast-4">{this.state.rechargelist}</span>
-                  </h2>
-                </div>
-              </Col>
-              <Col md="4" className="mt-1 mb-1">
-                <div className="bg-u">
-                  <span className="ast-1">
-                    <Icon.Package size={40} className="mr-50" />
-                  </span>
-                  <h2 className="ast-2">
-                    Total Package
-                    <span className="ast-4">{this.state.Allplans}</span>
-                  </h2>
-                </div>
-              </Col>
-            </Row>
-          </CardBody>
-        </Card>
+       
         {/* <Row>
           <Col sm="12">
             <TodayAstrologerList />
