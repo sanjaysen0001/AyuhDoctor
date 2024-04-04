@@ -25,7 +25,7 @@ const navigationConfig = [
       title: "Appointment",
       type: "item",
       icon: <Icon.Calendar  size={20} />,
-      // navLink: "/userList/patient-list",
+      navLink: "/Appointment-management/Appointment",
      
     },
     {
@@ -33,7 +33,7 @@ const navigationConfig = [
       title: "Call History ",
       type: "item",
       icon: <Icon.PhoneIncoming  size={20} />,
-      // navLink: "/userList/patient-list",
+      navLink: "/Appointment-management/call-history",
      
     },
     {
@@ -41,7 +41,7 @@ const navigationConfig = [
       title: "Chat History  ",
       type: "item",
       icon: <Icon.MessageCircle  size={20} />,
-      // navLink: "/userList/patient-list",
+      navLink: "/Appointment-management/Chat-history",
      
     },
     {
@@ -49,7 +49,7 @@ const navigationConfig = [
       title: "Video Call History   ",
       type: "item",
       icon: <Icon.Video  size={20} />,
-      // navLink: "/userList/patient-list",
+      navLink: "/Appointment-management/Video-call-history",
      
     },
     {
@@ -57,15 +57,15 @@ const navigationConfig = [
       title: "Physical Visit History    ",
       type: "item",
       icon: <Icon.Users  size={20} />,
-      // navLink: "/userList/patient-list",
+      navLink: "/Appointment-management/Physical-visithistory",
      
     },
     {
-      id: "prescrption history    ",
-      title: "Prescrption History    ",
+      id: "prescriptionhistory    ",
+      title: "Prescription History    ",
       type: "item",
       icon: <Icon.FileText  size={20} />,
-      // navLink: "/userList/patient-list",
+      navLink: "/Appointment-management/Prescription-history",
      
     },
     { 
@@ -77,7 +77,7 @@ const navigationConfig = [
         title: "Suggest Category and Diseases",
         type: "item",
         icon: <Icon.Command  size={20} />,
-        // navLink: "/userList/patient-list",
+        navLink: "/Personal-management/Suggest-category-and-diseases",
        
       },
       {
@@ -85,7 +85,7 @@ const navigationConfig = [
         title: "Gallery ",
         type: "item",
         icon: <Icon.Film  size={20} />,
-        // navLink: "/userList/patient-list",
+        navLink: "/Personal-management/Gallery",
        
       },
       { 
@@ -97,7 +97,7 @@ const navigationConfig = [
           title: "Pending Test Report",
           type: "item",
           icon: <Icon.FileMinus  size={20} />,
-          // navLink: "/userList/patient-list",
+          navLink: "/Dianostics-management/Pendingtest-report",
          
         },
         {
@@ -105,7 +105,7 @@ const navigationConfig = [
           title: "Delivered Test Report ",
           type: "item",
           icon: <Icon.FilePlus  size={20} />,
-          // navLink: "/userList/patient-list",
+          navLink: "/Dianostics-management/Delivered-test-report",
          
         },
         { 
@@ -117,7 +117,7 @@ const navigationConfig = [
             title: "Consulting Fees Setup ",
             type: "item",
             icon: <Icon.DollarSign  size={20} />,
-            // navLink: "/userList/patient-list",
+            navLink: "/Finance-management/Consulting-fees-setup",
            
           },
           {
@@ -127,7 +127,7 @@ const navigationConfig = [
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
             <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z"/>
           </svg>,
-            // navLink: "/userList/patient-list",
+            navLink: "/Finance-management/Wallet-history",
            
           },
           {
