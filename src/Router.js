@@ -45,6 +45,19 @@ const Adminreport = lazy(() =>
 const analyticsDashboard = lazy(() =>
   import("./views/dashboard/analytics/AnalyticsDashboard")
 );
+const dashboard=lazy(()=>import('./AyuhDoctor/Dashboard.js'))
+const Appointment=lazy(()=>import('./AyuhDoctor/Appointment.js'))
+const callhistorys=lazy(()=>import('./AyuhDoctor/Callhistory.js'))
+const Chathistorys=lazy(()=>import('./AyuhDoctor/Chathistory.js'))
+const Videocallhistory=lazy(()=>import('./AyuhDoctor/Videocallhistory.js'))
+const Physicalvisithistory=lazy(()=>import('./AyuhDoctor/Physicalvisithistory.js'))
+const Prescriptionhistory=lazy(()=>import('./AyuhDoctor/Prescriptionhistory.js'))
+const Pendingtestreport=lazy(()=>import('./AyuhDoctor/Pendingtestreport.js'))
+const Deliveredtestreport=lazy(()=>import('./AyuhDoctor/Deliveredtestreport.js'))
+const Consultingfeessetup=lazy(()=>import('./AyuhDoctor/Consultingfeessetup.js'))
+const Wallethistory=lazy(()=>import('./AyuhDoctor/Wallethistory.js'))
+const Suggestcategoryanddiseases=lazy(()=>import('./AyuhDoctor/Suggestcategoryanddiseases.js'))
+const Gallery=lazy(()=>import('./AyuhDoctor/Gallery.js'))
 const ecommerceDashboard = lazy(() =>
   import("./views/dashboard/ecommerce/EcommerceDashboard")
 );
@@ -707,12 +720,25 @@ class AppRouter extends React.Component {
         <HashRouter>
           <Switch>
             {/*<AppRoute exact={true} path="/" component={home} fullLayout /> */}
-            <AppRoute exact={true} path="/" component={analyticsDashboard} />
+            <AppRoute exact={true} path="/" component={dashboard} />
             <AppRoute
               exact={true}
               path="/ecommerce-dashboard"
               component={ecommerceDashboard}
             />
+            <AppRoute path='/Appointment-management/Appointment' component={Appointment}/>
+            <AppRoute path='/Appointment-management/call-history'  component={callhistorys}/>
+            <AppRoute path='/Appointment-management/Chat-history' component={Chathistorys}/>
+            <AppRoute path='/Appointment-management/Video-call-history' component={Videocallhistory}/>
+            <AppRoute path='/Appointment-management/Physical-visithistory' component={Physicalvisithistory}/>
+            <AppRoute path='/Appointment-management/Prescription-history' component={Prescriptionhistory}/>
+            <AppRoute path='/Dianostics-management/Pendingtest-report' component={Pendingtestreport}/>
+            <AppRoute path='/Dianostics-management/Delivered-test-report' component={Deliveredtestreport}/>
+            <AppRoute path='/Finance-management/Consulting-fees-setup' component={Consultingfeessetup}/>
+            <AppRoute path='/Finance-management/Wallet-history' component={Wallethistory}/>
+            
+            <AppRoute path='/Personal-management/Suggest-category-and-diseases' component={Suggestcategoryanddiseases}/>
+            <AppRoute path='/Personal-management/Gallery' component={Gallery}/>
             <AppRoute path='/userList/diagnostic-list' component={diagnosticlist}/>
             <AppRoute path='/userList/pharma-list' component={pharmalist}/>
             <AppRoute path="/userList/patient-list" component={UserList} />
