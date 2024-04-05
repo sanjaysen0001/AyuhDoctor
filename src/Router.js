@@ -56,6 +56,9 @@ const Pendingtestreport=lazy(()=>import('./AyuhDoctor/Pendingtestreport.js'))
 const Deliveredtestreport=lazy(()=>import('./AyuhDoctor/Deliveredtestreport.js'))
 const Consultingfeessetup=lazy(()=>import('./AyuhDoctor/Consultingfeessetup.js'))
 const Wallethistory=lazy(()=>import('./AyuhDoctor/Wallethistory.js'))
+const Transactionhistory=lazy(()=>import('./AyuhDoctor/Transactionhistory.js'))
+const Withdrawrequest=lazy(()=>import('./AyuhDoctor/Withdrawrequest.js'))
+const Editprofile=lazy(()=>import('./AyuhDoctor/Editprofile.js'))
 const Suggestcategoryanddiseases=lazy(()=>import('./AyuhDoctor/Suggestcategoryanddiseases.js'))
 const Gallery=lazy(()=>import('./AyuhDoctor/Gallery.js'))
 const ecommerceDashboard = lazy(() =>
@@ -736,7 +739,10 @@ class AppRouter extends React.Component {
             <AppRoute path='/Dianostics-management/Delivered-test-report' component={Deliveredtestreport}/>
             <AppRoute path='/Finance-management/Consulting-fees-setup' component={Consultingfeessetup}/>
             <AppRoute path='/Finance-management/Wallet-history' component={Wallethistory}/>
-            
+            <AppRoute path='/Finance-management/Transaction-history' component={Transactionhistory}/>
+            <AppRoute path='/Finance-management/Withdraw-request' component={Withdrawrequest}/>
+            <AppRoute path='/Finance-management/Edit-profile' component={Editprofile}/>
+
             <AppRoute path='/Personal-management/Suggest-category-and-diseases' component={Suggestcategoryanddiseases}/>
             <AppRoute path='/Personal-management/Gallery' component={Gallery}/>
             <AppRoute path='/userList/diagnostic-list' component={diagnosticlist}/>
