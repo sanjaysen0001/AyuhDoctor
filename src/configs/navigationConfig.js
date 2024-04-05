@@ -140,7 +140,7 @@ const navigationConfig = [
             <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/>
             <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567"/>
           </svg>,
-            // navLink: "/userList/patient-list",
+            navLink: "/Finance-management/Transaction-history",
            
           },
           {
@@ -148,7 +148,7 @@ const navigationConfig = [
             title: "Withdraw Request  ",
             type: "item",
             icon: <Icon.Repeat  size={20} />,
-            // navLink: "/userList/patient-list",
+            navLink: "/Finance-management/Withdraw-request",
            
           },
           {
@@ -159,7 +159,7 @@ const navigationConfig = [
             <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
             <path d="M1 1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h.5a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6.707L6 1.293A1 1 0 0 0 5.293 1zm0 1h4.293L6 2.707A1 1 0 0 0 6.707 3H15v10h-.085a1.5 1.5 0 0 0-2.4-.63C11.885 11.223 10.554 10 8 10c-2.555 0-3.886 1.224-4.514 2.37a1.5 1.5 0 0 0-2.4.63H1z"/>
           </svg>,
-            // navLink: "/userList/patient-list",
+            navLink: "/Finance-management/Edit-profile",
            
           },
           {
