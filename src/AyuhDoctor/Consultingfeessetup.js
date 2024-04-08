@@ -12,7 +12,7 @@ import {
   DropdownToggle,
 } from "reactstrap";
 import axiosConfig from "../axiosConfig";
-import { ContextLayout } from "../utility/context/Layout";
+import { ContextLayout } from "../utility/context/Layout"; 
 import { AgGridReact } from "ag-grid-react";
 import {  Eye, Edit,Trash2, ChevronDown } from "react-feather";
 import "../assets/scss/plugins/tables/_agGridStyleOverride.scss";
@@ -295,7 +295,7 @@ class Consultingfeessetup extends React.Component {
                     size="25px"
                     color="green"
                     onClick={() =>
-                      history.push(`/app/user/viewUser/${params.data._id}`)
+                      history.push(`/View-Consulting-fees-setup/${params.data._id}`)
                     }
                   />
                 )}
@@ -394,11 +394,8 @@ class Consultingfeessetup extends React.Component {
       console.log(rowData),
       (
         <div>
-          <Breadcrumbs
-            breadCrumbTitle="Diagnostics Management"
-            breadCrumbParent="Consulting Fees Setup"
-           
-          />
+          <h2>Consulting Fees Setup
+          </h2>
 
           <Row className="app-user-list">
             <Col sm="12"></Col>

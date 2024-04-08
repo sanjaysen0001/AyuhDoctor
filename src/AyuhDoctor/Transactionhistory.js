@@ -350,7 +350,7 @@ class Transactionhistory extends React.Component {
                     size="25px"
                     color="green"
                     onClick={() =>
-                      history.push(`/app/user/viewUser/${params.data._id}`)
+                      history.push(`/View-Transaction-history/${params.data._id}`)
                     }
                   />
                 )}
@@ -449,11 +449,7 @@ class Transactionhistory extends React.Component {
       console.log(rowData),
       (
         <div>
-          <Breadcrumbs
-            breadCrumbTitle="Diagnostics Management"
-            breadCrumbParent="Transaction History"
-           
-          />
+          <h2>Transaction History</h2>
 
           <Row className="app-user-list">
             <Col sm="12"></Col>

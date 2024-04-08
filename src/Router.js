@@ -47,20 +47,35 @@ const analyticsDashboard = lazy(() =>
 );
 const dashboard=lazy(()=>import('./AyuhDoctor/Dashboard.js'))
 const Appointment=lazy(()=>import('./AyuhDoctor/Appointment.js'))
+const Viewappointment=lazy(()=>import('./AyuhDoctor/Viewappointment.js'))
+const Appointmentedit=lazy(()=>import('./AyuhDoctor/Appointmentedit.js'))
 const callhistorys=lazy(()=>import('./AyuhDoctor/Callhistory.js'))
+const Callhistoryview=lazy(()=>import('./AyuhDoctor/Callhistoryview.js'))
 const Chathistorys=lazy(()=>import('./AyuhDoctor/Chathistory.js'))
+const Chathistoryview=lazy(()=>import('./AyuhDoctor/Chathistoryview.js'))
+const Videocallhistoryview=lazy(()=>import('./AyuhDoctor/Videocallhistoryview.js'))
 const Videocallhistory=lazy(()=>import('./AyuhDoctor/Videocallhistory.js'))
 const Physicalvisithistory=lazy(()=>import('./AyuhDoctor/Physicalvisithistory.js'))
+const Physicalvisithistoryview=lazy(()=>import('./AyuhDoctor/Physicalvisithistoryview.js'))
 const Prescriptionhistory=lazy(()=>import('./AyuhDoctor/Prescriptionhistory.js'))
+const Prescriptionhistoryview=lazy(()=>import('./AyuhDoctor/Prescriptionhistoryview.js'))
 const Pendingtestreport=lazy(()=>import('./AyuhDoctor/Pendingtestreport.js'))
+const Pendingtestreportview=lazy(()=>import('./AyuhDoctor/Pendingtestreportview.js'))
 const Deliveredtestreport=lazy(()=>import('./AyuhDoctor/Deliveredtestreport.js'))
+const Deliveredtestreportview=lazy(()=>import('./AyuhDoctor/Deliveredtestreportview.js'))
 const Consultingfeessetup=lazy(()=>import('./AyuhDoctor/Consultingfeessetup.js'))
+const Consultingfeessetupview=lazy(()=>import('./AyuhDoctor/Consultingfeessetupview.js'))
 const Wallethistory=lazy(()=>import('./AyuhDoctor/Wallethistory.js'))
+const Wallethistoryview=lazy(()=>import('./AyuhDoctor/Wallethistoryview.js'))
 const Transactionhistory=lazy(()=>import('./AyuhDoctor/Transactionhistory.js'))
+const Transactionhistoryview=lazy(()=>import('./AyuhDoctor/Transactionhistoryview.js'))
 const Withdrawrequest=lazy(()=>import('./AyuhDoctor/Withdrawrequest.js'))
+const Withdrawrequestview=lazy(()=>import('./AyuhDoctor/Withdrawrequestview.js'))
 const Editprofile=lazy(()=>import('./AyuhDoctor/Editprofile.js'))
 const Suggestcategoryanddiseases=lazy(()=>import('./AyuhDoctor/Suggestcategoryanddiseases.js'))
+const Suggestcategoryanddiseasesview=lazy(()=>import('./AyuhDoctor/Suggestcategoryanddiseasesview.js'))
 const Gallery=lazy(()=>import('./AyuhDoctor/Gallery.js'))
+const Galleryview=lazy(()=>import('./AyuhDoctor/Galleryview.js'))
 const ecommerceDashboard = lazy(() =>
   import("./views/dashboard/ecommerce/EcommerceDashboard")
 );
@@ -163,6 +178,7 @@ const TodayRechargeList = lazy(() =>
 const TodayCallHistory = lazy(() =>
   import("./views/apps/dashboardlist/TodayCallHistory")
 );
+
 
 // call management
 const CompleteCall = lazy(() =>
@@ -730,21 +746,35 @@ class AppRouter extends React.Component {
               component={ecommerceDashboard}
             />
             <AppRoute path='/Appointment-management/Appointment' component={Appointment}/>
+            <AppRoute path="/View-appointment/:id" component={Viewappointment}/> 
+            <AppRoute path="/Edit-appointment/:id" component={Appointmentedit}/>
             <AppRoute path='/Appointment-management/call-history'  component={callhistorys}/>
+            <AppRoute path="/View-call-history/:id" component={Callhistoryview}/>
             <AppRoute path='/Appointment-management/Chat-history' component={Chathistorys}/>
+            <AppRoute path="/View-chat-history/:id" component={Chathistoryview}/>
+            <AppRoute path="/View-video-call-history/:id" component={Videocallhistoryview}/>
             <AppRoute path='/Appointment-management/Video-call-history' component={Videocallhistory}/>
             <AppRoute path='/Appointment-management/Physical-visithistory' component={Physicalvisithistory}/>
+            <AppRoute path="/View-physical-visit-history/:id" component={Physicalvisithistoryview}/>
             <AppRoute path='/Appointment-management/Prescription-history' component={Prescriptionhistory}/>
+            <AppRoute path="/View-Prescription-history/:id" component={Prescriptionhistoryview}/>
             <AppRoute path='/Dianostics-management/Pendingtest-report' component={Pendingtestreport}/>
+            <AppRoute path='/View-Pending-test-report/:id' component={Pendingtestreportview}/>
             <AppRoute path='/Dianostics-management/Delivered-test-report' component={Deliveredtestreport}/>
+            <AppRoute path='/View-Delivered-test-report/:id' component={Deliveredtestreportview}/>
             <AppRoute path='/Finance-management/Consulting-fees-setup' component={Consultingfeessetup}/>
+            <AppRoute path='/View-Consulting-fees-setup/:id' component={Consultingfeessetupview}/>
             <AppRoute path='/Finance-management/Wallet-history' component={Wallethistory}/>
+            <AppRoute path='/View-Wallet-history/:id' component={Wallethistoryview}/>
             <AppRoute path='/Finance-management/Transaction-history' component={Transactionhistory}/>
+            <AppRoute path='/View-Transaction-history/:id' component={Transactionhistoryview}/>
             <AppRoute path='/Finance-management/Withdraw-request' component={Withdrawrequest}/>
+            <AppRoute path='/View-Withdraw-request/:id' component={Withdrawrequestview}/>
             <AppRoute path='/Finance-management/Edit-profile' component={Editprofile}/>
-
+            <AppRoute path='/View-Suggest-category-and-diseases/:id' component={Suggestcategoryanddiseasesview}/>
             <AppRoute path='/Personal-management/Suggest-category-and-diseases' component={Suggestcategoryanddiseases}/>
             <AppRoute path='/Personal-management/Gallery' component={Gallery}/>
+            <AppRoute path="/View-gallery/:id" component={Galleryview}/>
             <AppRoute path='/userList/diagnostic-list' component={diagnosticlist}/>
             <AppRoute path='/userList/pharma-list' component={pharmalist}/>
             <AppRoute path="/userList/patient-list" component={UserList} />

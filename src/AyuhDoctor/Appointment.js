@@ -156,27 +156,27 @@ class Appointment extends React.Component {
       //     );
       //   },
       // },
-      {
-        headerName: " Time",
-        field: "time",
-        filter: true,
-        width: 120,
-        cellRendererFramework: (params) => {
-          return (
-            <div>
-            {/* 
-              <span>{params.data?.createdAt.split("T")[1].split(".")[0]}</span>
-*/}
+//       {
+//         headerName: " Time",
+//         field: "time",
+//         filter: true,
+//         width: 120,
+//         cellRendererFramework: (params) => {
+//           return (
+//             <div>
+//             {/* 
+//               <span>{params.data?.createdAt.split("T")[1].split(".")[0]}</span>
+// */}
 
-            </div>
-          );
-        },
-      },
+//             </div>
+//           );
+//         },
+//       },
       {
-        headerName: " Date",
-        field: "date",
+        headerName: " Date & Time",
+        field: "date&time",
         filter: true,
-        width: 120,
+        width: 150,
         cellRendererFramework: (params) => {
           return (
             <div>
@@ -224,7 +224,7 @@ class Appointment extends React.Component {
         cellRendererFramework: (params) => {
           return (
             <div className="actions cursor-pointer">
-               {/* 
+               
               <Route
                 render={({ history }) => (
                   <Eye
@@ -232,13 +232,12 @@ class Appointment extends React.Component {
                     size="25px"
                     color="green"
                     onClick={() =>
-                      history.push(`/app/user/viewUser/${params.data._id}`)
+                      history.push(`/View-appointment/${params.data._id}`)
                     }
                   />
                 )}
               />
-              */}
-              {/*
+             
               <Route
                 render={({ history }) => (
                   <Edit
@@ -246,13 +245,12 @@ class Appointment extends React.Component {
                     size="25px"
                     color="blue"
                     onClick={() =>
-                      history.push(`/app/user/editUser/${params.data._id}`)
+                      history.push(`/Edit-appointment/${params.data._id}`)
                     }
                   />
                 )}
               />
-               */}
-               {/* 
+              
               <Trash2
                 className="mr-50"
                 size="25px"
@@ -263,7 +261,7 @@ class Appointment extends React.Component {
                   // this.gridApi.updateRowData({ remove: selectedData });
                 }}
               />
-              */}
+              
             </div>
           );
         },
@@ -334,11 +332,7 @@ class Appointment extends React.Component {
       console.log(rowData),
       (
         <div>
-          <Breadcrumbs
-            breadCrumbTitle="Appointment Management"
-            breadCrumbParent="Appintment"
-           
-          />
+        <h2>Appintment</h2>
 
           <Row className="app-user-list">
             <Col sm="12"></Col>

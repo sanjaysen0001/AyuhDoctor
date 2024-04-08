@@ -295,7 +295,7 @@ class Gallery extends React.Component {
                     size="25px"
                     color="green"
                     onClick={() =>
-                      history.push(`/app/user/viewUser/${params.data._id}`)
+                      history.push(`/View-gallery/${params.data._id}`)
                     }
                   />
                 )}
@@ -394,11 +394,7 @@ class Gallery extends React.Component {
       console.log(rowData),
       (
         <div>
-          <Breadcrumbs
-            breadCrumbTitle="Personal Management"
-            breadCrumbParent="Gallery"
-           
-          />
+       <h2>Gallery</h2>
 
           <Row className="app-user-list">
             <Col sm="12"></Col>

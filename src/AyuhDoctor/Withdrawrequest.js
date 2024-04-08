@@ -350,7 +350,7 @@ class Withdrawrequest extends React.Component {
                     size="25px"
                     color="green"
                     onClick={() =>
-                      history.push(`/app/user/viewUser/${params.data._id}`)
+                      history.push(`/View-Withdraw-request/${params.data._id}`)
                     }
                   />
                 )}
@@ -449,11 +449,8 @@ class Withdrawrequest extends React.Component {
       console.log(rowData),
       (
         <div>
-          <Breadcrumbs
-            breadCrumbTitle="Diagnostics Management"
-            breadCrumbParent="Withdraw Request"
-           
-          />
+         <h2>Withdraw Request
+         </h2>
 
           <Row className="app-user-list">
             <Col sm="12"></Col>

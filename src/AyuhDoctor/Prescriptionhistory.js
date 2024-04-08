@@ -228,7 +228,7 @@ class Prescriptionhistory extends React.Component {
                     size="25px"
                     color="green"
                     onClick={() =>
-                      history.push(`/app/user/viewUser/${params.data._id}`)
+                      history.push(`/View-Prescription-history/${params.data._id}`)
                     }
                   />
                 )}
@@ -327,11 +327,7 @@ class Prescriptionhistory extends React.Component {
       console.log(rowData),
       (
         <div>
-          <Breadcrumbs
-            breadCrumbTitle="Appointment Management"
-            breadCrumbParent="Prescription History"
-           
-          />
+        <h2>Prescription History</h2>
 
           <Row className="app-user-list">
             <Col sm="12"></Col>
