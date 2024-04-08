@@ -268,7 +268,7 @@ class Pendingtestreport extends React.Component {
                     size="25px"
                     color="green"
                     onClick={() =>
-                      history.push(`/app/user/viewUser/${params.data._id}`)
+                      history.push(`/View-Pending-test-report/${params.data._id}`)
                     }
                   />
                 )}
@@ -367,11 +367,8 @@ class Pendingtestreport extends React.Component {
       console.log(rowData),
       (
         <div>
-          <Breadcrumbs
-            breadCrumbTitle="Diagnostics Management"
-            breadCrumbParent="Pending Test Report"
-           
-          />
+          <h2>Pending Test Report
+          </h2>
 
           <Row className="app-user-list">
             <Col sm="12"></Col>

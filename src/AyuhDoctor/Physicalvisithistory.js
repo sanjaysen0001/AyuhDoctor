@@ -147,32 +147,32 @@ class Physicalvisithistory extends React.Component {
       //     );
       //   },
       // },
-      {
-        headerName: "Start Time",
-        field: "starttime",
-        filter: true,
-        width: 150,
-        cellRendererFramework: (params) => {
-          return (
-            <div>
-              <span>{params.data?.updatedAt.split("T")[1].split(".")[0]}</span>
-            </div>
-          );
-        },
-      },
-      {
-        headerName: "End Time",
-        field: "endtime",
-        filter: true,
-        width: 150,
-        cellRendererFramework: (params) => {
-          return (
-            <div>
-              <span>{params.data?.createdAt.split("T")[1].split(".")[0]}</span>
-            </div>
-          );
-        },
-      },
+      // {
+      //   headerName: "Visited Time",
+      //   field: "starttime",
+      //   filter: true,
+      //   width: 150,
+      //   cellRendererFramework: (params) => {
+      //     return (
+      //       <div>
+      //         <span>{params.data?.updatedAt.split("T")[1].split(".")[0]}</span>
+      //       </div>
+      //     );
+      //   },
+      // },
+      // {
+      //   headerName: "End Time",
+      //   field: "endtime",
+      //   filter: true,
+      //   width: 150,
+      //   cellRendererFramework: (params) => {
+      //     return (
+      //       <div>
+      //         <span>{params.data?.createdAt.split("T")[1].split(".")[0]}</span>
+      //       </div>
+      //     );
+      //   },
+      // },
       {
         headerName: " Date",
         field: "date",
@@ -228,7 +228,7 @@ class Physicalvisithistory extends React.Component {
                     size="25px"
                     color="green"
                     onClick={() =>
-                      history.push(`/app/user/viewUser/${params.data._id}`)
+                      history.push(`/View-physical-visit-history/${params.data._id}`)
                     }
                   />
                 )}
@@ -327,11 +327,8 @@ class Physicalvisithistory extends React.Component {
       console.log(rowData),
       (
         <div>
-          <Breadcrumbs
-            breadCrumbTitle="Appointment Management"
-            breadCrumbParent="Physical Visit History"
-           
-          />
+        <h2>Physical Visit History
+        </h2>
 
           <Row className="app-user-list">
             <Col sm="12"></Col>

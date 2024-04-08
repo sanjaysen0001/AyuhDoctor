@@ -215,7 +215,7 @@ class Chathistory extends React.Component {
                     size="25px"
                     color="green"
                     onClick={() =>
-                      history.push(`/app/user/viewUser/${params.data._id}`)
+                      history.push(`/View-chat-history/${params.data._id}`)
                     }
                   />
                 )}
@@ -314,11 +314,8 @@ class Chathistory extends React.Component {
       console.log(rowData),
       (
         <div>
-          <Breadcrumbs
-            breadCrumbTitle="Appointment Management"
-            breadCrumbParent="Chat History"
-           
-          />
+          <h2>Chat History
+          </h2>
 
           <Row className="app-user-list">
             <Col sm="12"></Col>

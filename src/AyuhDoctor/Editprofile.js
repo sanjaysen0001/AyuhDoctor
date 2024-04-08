@@ -136,6 +136,10 @@ class Editprofile extends React.Component {
                       Email:{" "}
                       <span className="lst-3">{this.state.data.email}</span>
                     </li>
+                    <li className="lst-2">
+                    Email:{" "}
+                    <span className="lst-3">{this.state.data.email}</span>
+                  </li>
                   </ul>
                 </div>
               </Card>
