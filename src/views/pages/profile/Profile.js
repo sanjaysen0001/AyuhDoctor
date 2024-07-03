@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   Row,
   Col,
@@ -8,17 +8,15 @@ import {
   Input,
   Card,
   CardTitle,
+  CustomInput,
+  FormGroup,
 } from "reactstrap";
 import "../../../assets/scss/pages/users-profile.scss";
-import CheckBoxesVuexy from "../../../components/@vuexy/checkbox/CheckboxesVuexy";
-import { Check } from "react-feather";
 import Breadcrumbs from "../../../components/@vuexy/breadCrumbs/BreadCrumb";
-import axios from "axios";
 import swal from "sweetalert";
 import axiosConfig from "../../../axiosConfig";
-// import { Route } from "react-router-dom";
 
-class Profile extends React.Component {
+class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,80 +29,134 @@ class Profile extends React.Component {
       selectedName: "",
       selectedFile: null,
       data: {},
+      fromTimeFormatted: "", // State to store formatted time
+      toTimeFormatted: "", // State to store formatted time
     };
   }
 
-  //Image Submit Handler
-  onChangeHandler = (event) => {
-    this.setState({ selectedFile: event.target.files[0] });
-    this.setState({ selectedName: event.target.files[0].name });
-    console.log(event.target.files[0]);
-  };
-
   componentDidMount() {
-    // let { id } = this.props.match.params;
+    const userId = localStorage.getItem("userId");
     axiosConfig
-      .get(`/admin/viewoneadmin/64535cc3c84d5b23e0102d4f`)
+      .get(`/doctorPanel/viewById/${userId}`)
       .then((response) => {
-        //console.log(response.data);
-        console.log(response);
+        const {
+          fullname,
+          email,
+          mobileNumber,
+          date,
+          consulting,
+          physicianVisitFees,
+          ratePerMin,
+          fromTime,
+          toTime,
+          consultingFeesCharge,
+          days,
+        } = response.data.data;
         this.setState({
           data: response.data.data,
-          name: response.data.data.name,
-          email: response.data.data.email,
-          mobile: response.data.data.mobile,
-          password: response.data.data.password,
-          cnfmPassword: response.data.data.cnfmPassword,
+          name: fullname,
+          email: email,
+          mobile: mobileNumber,
+          dob: date,
+          consulting: consulting,
+          physicianVisitFees: physicianVisitFees,
+          ratePerMin: ratePerMin,
+          fromTime: fromTime,
+          toTime: toTime,
+          consultingFeesCharge: consultingFeesCharge,
+          days: days,
         });
       })
       .catch((error) => {
-        console.log(error.response);
+        console.error("Error fetching data:", error.response.data);
       });
   }
 
   changeHandler = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    // Format time to AM/PM
+    if (name === "fromTime" || name === "toTime") {
+      const time = new Date();
+      const [hours, minutes] = value.split(":");
+      time.setHours(parseInt(hours));
+      time.setMinutes(parseInt(minutes));
+      const formattedTime = time.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+      this.setState({
+        [name]: value,
+        [`${name}Formatted`]: formattedTime,
+      });
+    } else {
+      this.setState({ [name]: value });
+    }
+  };
+
+  handleProfile = (e) => {
+    this.setState({ profile: e.target.files[0] });
   };
 
   submitHandler = (e) => {
     e.preventDefault();
-    console.log(this.state.data);
+    const {
+      name,
+      email,
+      fromTime,
+      toTime,
+      ratePerMin,
+      physicianVisitFees,
+      days,
+      mobile,
+      dob,
+      profile,
+    } = this.state;
     const data = new FormData();
-    data.append("name", this.state.name);
-    data.append("email", this.state.email);
-    data.append("mobile", this.state.mobile);
-    data.append("password", this.state.password);
-    data.append("cnfmPassword", this.state.cnfmPassword);
-    if (this.state.selectedFile !== null) {
-      data.append("adminimg", this.state.selectedFile, this.state.selectedName);
+    data.append("fullname", name);
+    data.append("email", email);
+    data.append("fromTime", fromTime);
+    data.append("toTime", toTime);
+    data.append("ratePerMin", ratePerMin);
+    data.append("physicianVisitFees", physicianVisitFees);
+    data.append("days", days);
+    data.append("mobileNumber", mobile);
+    data.append("date", dob);
+    if (profile) {
+      data.append("image", profile);
     }
 
-    for (var value of data.values()) {
-      console.log(value);
-    }
-
-    for (var key of data.keys()) {
-      console.log(key);
-    }
-    // let { id } = this.props.match.params;
+    const userId = localStorage.getItem("userId");
     axiosConfig
-      .post(`/admin/editprofile/64535cc3c84d5b23e0102d4f`, data, {
+      .put(`/doctorPanel/doctor-edit/${userId}`, data, {
         headers: {
           "ad-token": localStorage.getItem("ad-token"),
         },
       })
       .then((response) => {
-        console.log(response.data.message);
-        swal("Success!", "Submitted SuccessFull!", "success");
-        window.location.reload("/#/pages/profile");
+        swal("Success!", "Profile updated successfully!", "success");
+        this.componentDidMount(); // Refresh data after update
       })
-
       .catch((error) => {
-        swal("Error!", "You clicked the button!", "error");
-        console.log(error.response);
+        swal("Error!", "Update failed, please try again.", "error");
+        console.error("Error updating profile:", error.response);
       });
   };
+
   render() {
+    const {
+      data,
+      name,
+      email,
+      mobile,
+      dob,
+      fromTime,
+      toTime,
+      physicianVisitFees,
+      ratePerMin,
+      days,
+    } = this.state;
+
     return (
       <React.Fragment>
         <Breadcrumbs
@@ -118,23 +170,43 @@ class Profile extends React.Component {
               <Card className="bg-authentication rounded-0 mb-0 w-100">
                 <div className="profile-img text-center st-1">
                   <img
-                    src={this.state.data.adminimg}
+                    src={`https://sample.rupioo.com/Images/${data.image}`}
                     alt="adminimg"
                     className="img-fluid img-border rounded-circle box-shadow-1"
                     width="150"
                   />
                   <ul className="lst-1">
                     <li className="lst-2">
-                      Name:{" "}
-                      <span className="lst-3">{this.state.data.name}</span>
+                      Name: <span className="lst-3">{data.fullname}</span>
                     </li>
                     <li className="lst-2">
-                      Mobile:{" "}
-                      <span className="lst-3">{this.state.data.mobile}</span>
+                      Mobile: <span className="lst-3">{data.mobileNumber}</span>
                     </li>
                     <li className="lst-2">
-                      Email:{" "}
-                      <span className="lst-3">{this.state.data.email}</span>
+                      Email: <span className="lst-3">{data.email}</span>
+                    </li>
+                    <li className="lst-2">
+                      Date: <span className="lst-3">{data.date}</span>
+                    </li>
+                    <li className="lst-2">
+                      Schedule FromTime:
+                      <span className="lst-3">{data.fromTime}</span>
+                    </li>
+                    <li className="lst-2">
+                      toTime : <span className="lst-3">{data.toTime}</span>
+                    </li>
+                    <li className="lst-2">
+                      Consulting Fee:
+                      <span className="lst-3">
+                        Rs {data.physicianVisitFees}/-
+                      </span>
+                    </li>
+                    <li className="lst-2">
+                      Rate Per Min:
+                      <span className="lst-3">Rs {data.ratePerMin}/-</span>
+                    </li>
+                    <li className="lst-2">
+                      Days: <span className="lst-3">{data.days}</span>
                     </li>
                   </ul>
                 </div>
@@ -152,70 +224,127 @@ class Profile extends React.Component {
                   <div className="st-2">
                     <CardTitle>
                       <h4 className="mb-3">Edit Profile</h4>
-                      <Col></Col>
                     </CardTitle>
                     <Row className="m-0">
-                      <Col sm="12" className="p-0">
-                        <Form action="/">
-                          <Label>Name</Label>
-                          <Input
-                            type="text"
-                            name="name"
-                            placeholder="Name"
-                            value={this.state.name}
+                      <Col className="mb-1" lg="4" md="4" xl="4" sm="12">
+                        <Label htmlFor="name">Name</Label>
+                        <Input
+                          type="text"
+                          id="name"
+                          name="name"
+                          placeholder="Name"
+                          value={name}
+                          onChange={this.changeHandler}
+                        />
+                      </Col>
+                      <Col className="mb-1" lg="4" md="4" xl="4" sm="12">
+                        <Label>Email</Label>
+                        <Input
+                          type="email"
+                          name="email"
+                          placeholder="Email"
+                          value={email}
+                          onChange={this.changeHandler}
+                        />
+                      </Col>
+                      <Col className="mb-1" lg="4" md="4" xl="4" sm="12">
+                        <Label>Mobile No.</Label>
+                        <Input
+                          type="number"
+                          name="mobile"
+                          placeholder="Mobile No."
+                          value={mobile}
+                          onChange={this.changeHandler}
+                        />
+                      </Col>
+                      <Col className="mb-1" lg="4" md="4" xl="4" sm="12">
+                        <Label>DOB</Label>
+                        <Input
+                          type="date"
+                          name="dob"
+                          value={dob}
+                          onChange={this.changeHandler}
+                        />
+                      </Col>
+                      <Col className="mb-1" lg="4" md="4" xl="4" sm="12">
+                        <Label>From Time</Label>
+                        <Input
+                          type="time"
+                          name="fromTime"
+                          placeholder="From Time"
+                          value={fromTime}
+                          onChange={this.changeHandler}
+                        />
+                      </Col>
+                      <Col className="mb-1" lg="4" md="4" xl="4" sm="12">
+                        <Label>To Time</Label>
+                        <Input
+                          type="time"
+                          name="toTime"
+                          placeholder="To Time"
+                          value={toTime}
+                          onChange={this.changeHandler}
+                        />
+                      </Col>
+                      <Col className="mb-1" lg="4" md="4" xl="4" sm="12">
+                        <Label>Consulting Fee</Label>
+                        <Input
+                          type="number"
+                          name="physicianVisitFees"
+                          placeholder="Consulting Fee"
+                          value={this.state.physicianVisitFees}
+                          onChange={this.changeHandler}
+                        />
+                      </Col>
+                      <Col className="mb-1" lg="4" md="4" xl="4" sm="12">
+                        <Label> Rate Per Min </Label>
+                        <Input
+                          type="number"
+                          name="ratePerMin"
+                          placeholder=" Rate Per Min"
+                          value={this.state.ratePerMin}
+                          onChange={this.changeHandler}
+                        />
+                      </Col>
+                      <Col className="mb-1" lg="4" md="4" xl="4" sm="12">
+                        <Label>Profile Update </Label>
+                        <Input
+                          type="file"
+                          name="profile"
+                          onChange={this.handleProfile}
+                        />
+                      </Col>
+                      <Col className="mb-1" lg="4" md="4" xl="4" sm="12">
+                        <FormGroup>
+                          <Label> Days </Label>
+                          <CustomInput
+                            type="select"
+                            id="1"
+                            name="days"
+                            value={this.state.days}
                             onChange={this.changeHandler}
-                          />
-                          <Label>Email</Label>
-                          <Input
-                            type="email"
-                            name="email"
-                            placeholder="email"
-                            value={this.state.email}
-                            onChange={this.changeHandler}
-                          />
-                          <Label>Mobile No.</Label>
-                          <Input
-                            type="number"
-                            name="mobile"
-                            placeholder="Mobile No."
-                            value={this.state.mobile}
-                            onChange={this.changeHandler}
-                          />
-                          <Label>Password</Label>
-                          <Input
-                            type="password"
-                            name="password"
-                            placeholder="Password"
-                            value={this.state.password}
-                            onChange={this.changeHandler}
-                          />
-                          <Label>Confirm Password</Label>
-                          <Input
-                            type="password"
-                            name="cnfmPassword"
-                            placeholder="Reset password"
-                            value={this.state.cnfmPassword}
-                            onChange={this.changeHandler}
-                          />
-                          <Label>User Image</Label>
-                          <Input
-                            className="form-control"
-                            type="file"
-                            name="adminimg"
-                            onChange={this.onChangeHandler}
-                          />
-                          <CheckBoxesVuexy
-                            color="primary"
-                            icon={<Check className="vx-icon" size={16} />}
-                            label=" I accept the terms & conditions."
-                            defaultChecked={true}
-                          />
-                          <div className="d-flex justify-content-between">
-                            <Button.Ripple color="primary" type="submit">
-                              Submit
-                            </Button.Ripple>
-                          </div>
-                        </Form>
+                          >
+                            <option value="">Select Days</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
+                          </CustomInput>
+                        </FormGroup>
+                      </Col>
+                      <Col
+                        className="mt-1 float-right"
+                        lg="8"
+                        md="8"
+                        xl="8"
+                        sm="12"
+                      >
+                        <Button color="primary" type="submit">
+                          Update
+                        </Button>
                       </Col>
                     </Row>
                   </div>

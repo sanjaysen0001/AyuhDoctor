@@ -1,6 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
-
+import React, { useState, useEffect } from "react";
 import {
   UncontrolledDropdown,
   DropdownMenu,
@@ -9,46 +7,50 @@ import {
 } from "reactstrap";
 import axios from "axios";
 import * as Icon from "react-feather";
-import { Route } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axiosConfig from "../../../axiosConfig";
 
-const handleNavigation = (e, path) => {
-  e.preventDefault();
-  // history.push(path);
-  window.location.replace(path);
-};
-
 const NavbarUser = () => {
-  const [adminimg, setAdminimg] = useState([]);
-  // console.log(notifications);
-
-  const tokenVerify = () => {
-    let data = localStorage.getItem("ad-token");
-
-    sessionStorage.clear();
-    if (data === undefined || data === null) {
-      window.location.replace("/#/pages/login");
-    }
-  };
+  const [doctorView, setDoctorView] = useState({});
+  const history = useHistory();
 
   useEffect(() => {
-    tokenVerify();
-    async function getNotifications() {
-      try {
-        //axiosConfig.get(`/dlt_startup/${id}`)
-        let userId = localStorage.getItem("userId");
-        const data = await axiosConfig.get(
-          `/admin/viewoneadmin/64535cc3c84d5b23e0102d4f`
-        );
-        // /admin/viewoneadmin/${userId}
-        console.log(data.data.data);
-        setAdminimg(data.data.data);
-      } catch (error) {
-        console.log("SomeThing Wrong");
+    const fetchNotifications = async () => {
+      const token = localStorage.getItem("ad-token");
+
+      if (!token) {
+        sessionStorage.clear();
+        history.replace("/#/pages/login");
+        return;
       }
-    }
-    getNotifications();
-  }, []);
+
+      try {
+        const userId = localStorage.getItem("userId");
+        const response = await axiosConfig.get(
+          `/doctorPanel/viewById/${userId}`
+        );
+        setDoctorView(response.data.data);
+      } catch (error) {
+        console.error(
+          "Something went wrong while fetching notifications.",
+          error
+        );
+      }
+    };
+
+    fetchNotifications();
+  }, [history]);
+
+  const handleNavigation = (e, path) => {
+    e.preventDefault();
+    history.push(path);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("ad-token");
+    localStorage.clear();
+    history.replace("/#/pages/login");
+  };
 
   return (
     <ul className="nav navbar-nav navbar-nav-user float-right">
@@ -56,13 +58,12 @@ const NavbarUser = () => {
         <DropdownToggle tag="a" className="nav-link dropdown-user-link">
           <div className="user-nav d-sm-flex d-none">
             <span className="user-name text-bold-600" color="#fff">
-              {adminimg.name}
+              {doctorView?.fullname}
             </span>
-            {/* <span className="user-status">Available</span> */}
           </div>
           <span data-tour="user">
             <img
-              src={adminimg?.adminimg}
+              src={`https://sample.rupioo.com/Images/${doctorView.image}`}
               className="round"
               height="40"
               width="40"
@@ -70,7 +71,6 @@ const NavbarUser = () => {
             />
           </span>
         </DropdownToggle>
-        {/* {/ <UserDropdown {...this.props} /> /} */}
         <DropdownMenu right>
           <DropdownItem
             tag="a"
@@ -82,23 +82,14 @@ const NavbarUser = () => {
           </DropdownItem>
 
           <DropdownItem divider />
-          <Route
-            render={({ history }) => (
-              <DropdownItem
-                tag="a"
-                onClick={(e) => {
-                  localStorage.removeItem("ad-token");
-                  window.location.replace("/#/pages/login");
-                }}
-              >
-                <Icon.Power size={14} className="mr-50" />
-                <span className="align-middle">Log Out</span>
-              </DropdownItem>
-            )}
-          />
+          <DropdownItem tag="a" onClick={handleLogout}>
+            <Icon.Power size={14} className="mr-50" />
+            <span className="align-middle">Log Out</span>
+          </DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
     </ul>
   );
 };
+
 export default NavbarUser;

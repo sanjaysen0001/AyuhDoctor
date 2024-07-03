@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Card,
   CardBody,
@@ -7,36 +7,37 @@ import {
   Button,
   Breadcrumb,
   BreadcrumbItem,
-} from 'reactstrap'
-import { history } from '../history'
-import '../assets/scss/pages/app-ecommerce-shop.scss'
-import '../assets/scss/pages/users.scss'
+  Label,
+  Input,
+} from "reactstrap";
+import { history } from "../history";
+import "../assets/scss/pages/app-ecommerce-shop.scss";
+import "../assets/scss/pages/users.scss";
 // import Breadcrumbs from "../../../components/@vuexy/breadCrumbs/BreadCrumb";
 
-import axiosConfig from '../axiosConfig'
-import { Link } from 'react-router-dom/cjs/react-router-dom'
+import axiosConfig from "../axiosConfig";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 // import axios from "axios";
 class Viewappointment extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
+      appointment: {},
       data: {},
-    }
+    };
   }
 
   componentDidMount() {
-    let { id } = this.props.match.params
+    let { id } = this.props.match.params;
     axiosConfig
-      .get(`/user/viewoneuser/${id}`)
-
+      .get(`/patientPanel-appointment/viewbyid/${id}`)
       .then((response) => {
-        //console.log(response.data);
-        console.log(response.data.data)
-        this.setState({ data: response.data.data })
+        console.log(response.data.Appointment);
+        this.setState({ appointment: response.data.Appointment });
       })
       .catch((error) => {
-        console.log(error.response)
-      })
+        console.log(error.response);
+      });
   }
 
   render() {
@@ -50,9 +51,7 @@ class Viewappointment extends React.Component {
           /> */}
           <Row>
             <Col sm="12">
-              <div>
-              
-              </div>
+              <div></div>
             </Col>
           </Row>
           <Card className="overflow-hidden app-ecommerce-details">
@@ -63,94 +62,69 @@ class Viewappointment extends React.Component {
                 </h1>
               </Col>
               <Col>
-              <Link to={'/Appointment-management/Appointment'}>
-                <Button
-                  className=" btn btn-danger float-right"
-                
-                >
-                  Back
-                </Button>
+                <Link to={"/Appointment-management/Appointment"}>
+                  <Button className=" btn btn-danger float-right">Back</Button>
                 </Link>
               </Col>
             </Row>
             <CardBody className="pb-2 ">
               <Row className="ml-4">
                 <Col sm="9" md="12" lg="12">
-                  <div className="users-page-view-table">
-                    {/* <div className="d-flex user-info">
-                    <div className="user-info-title font-weight-bold">
-                    Customer Id
-                    </div>
-                    <div className="text-truncate">
-                      <span>{this.state.data.customerId}</span>
-                    </div>
-                  </div> */}
-                    <div className="d-flex user-info">
-                      <div className="user-info-title font-weight-bold">
-                      Appintment No.
-
-                      </div>
-                      <div className="text-truncate">
-                        <span>0056</span>
-                      </div>
-                    </div>
-                    {/* <div className="d-flex user-info">
-                    <div className="user-info-title font-weight-bold">
-                      Last Name
-                    </div>
-                    <div className="text-truncate">
-                      <span>{this.state.data.lastname}</span>
-                    </div>
-                  </div> */}
-                    <div className="d-flex user-info">
-                      <div className="user-info-title font-weight-bold">
-                        Patient Name
-                      </div>
-                      <div className="text-truncate">
-                        <span>{this.state.data.fullname}</span>
-                      </div>
-                    </div>
-                    <div className="d-flex user-info">
-                      <div className="user-info-title font-weight-bold">
-                        Doctor Name
-                      </div>
-                      <div className="text-truncate">
-                        <span>Dr. Vivek</span>
-                      </div>
-                    </div>
-                    <div className="d-flex user-info">
-                      <div className="user-info-title font-weight-bold">
-                       Status
-                      </div>
-                      <div className="text-truncate">
-                        <span>Pending</span>
-                      </div>
-                    </div>
-                    <div className="d-flex user-info">
-                    <div className="user-info-title font-weight-bold">
-                      Date & Time
-                    </div>
-                    <div className="text-truncate">
-                      <span>{this.state.data.createdAt}</span>
-                    </div>
-                  </div>
-                  <div className="d-flex user-info">
-                    <div className="user-info-title font-weight-bold">
-                    Amount
-                    </div>
-                    <div className="text-truncate">
-                      <span>{this.state.data.amount}</span>
-                    </div>
-                  </div>
-                  </div>
+                  <Row>
+                    <Col sm="12" md="4" lg="4">
+                      <Label> AppointmentType</Label>
+                      <Input
+                        type="text"
+                        name=""
+                        value={this.state.appointment?.appointmentType}
+                        onChange={this.handleChange}
+                      />
+                    </Col>
+                    <Col sm="12" md="4" lg="4">
+                      <Label> Patient Name</Label>
+                      <Input
+                        type="text"
+                        name=""
+                        value={this.state.data.fullname}
+                        onChange={this.handleChange}
+                      />
+                    </Col>
+                    <Col sm="12" md="4" lg="4">
+                      <Label>Doctor Name</Label>
+                      <Input
+                        type="text"
+                        name=""
+                        value={this.state.appointment?.appointmentType}
+                        onChange={this.handleChange}
+                      />
+                    </Col>
+                    <Col sm="12" md="4" lg="4">
+                      <Label>Status</Label>
+                      <Input
+                        type="text"
+                        name=""
+                        value={this.state.appointment?.appointmentType}
+                        onChange={this.handleChange}
+                      />
+                    </Col>
+                    <Col sm="12" md="4" lg="4">
+                      <Label> Amount</Label>
+                      <Input
+                        type="text"
+                        name=""
+                        value={this.state.appointment?.appointmentType}
+                        onChange={this.handleChange}
+                      />
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
             </CardBody>
           </Card>
         </div>
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default Viewappointment
+export default Viewappointment;

@@ -14,7 +14,7 @@ import {
 import axiosConfig from "../axiosConfig";
 import { ContextLayout } from "../utility/context/Layout";
 import { AgGridReact } from "ag-grid-react";
-import {  Eye, Edit,Trash2, ChevronDown } from "react-feather";
+import { Eye, Edit, Trash2, ChevronDown } from "react-feather";
 import "../assets/scss/plugins/tables/_agGridStyleOverride.scss";
 import "../assets/scss/pages/users.scss";
 import { Route } from "react-router-dom";
@@ -45,43 +45,41 @@ class Appointment extends React.Component {
         // headerCheckboxSelectionFilteredOnly: true,
         // headerCheckboxSelection: true,
       },
-    //   {
-    //     headerName: "Image",
-    //     field: "userimg",
-    //     filter: false,
-    //     width: 100,
-    //     setColumnVisible: false,
-    //     cellRendererFramework: (params) => {
-    //       return (
-    //         <div className="d-flex align-items-center cursor-pointer">
-    //           {params.data.userimg.map((i) => (
-    //             <img
-    //               className=" rounded-circle  mr-3"
-    //               src={i}
-    //               alt="user avatar"
-    //               height="40"
-    //               width="40"
-    //             />
-    //           ))}
-    //         </div>
-    //       );
-    //     },
-    //   },
-    {
-      headerName: "Appointment No.",
-      field: "appointmentno",
-      filter: true,
-      width: 200,
-      cellRendererFramework: (params) => {
-        return (
-          <div>
-          {/* 
-            <span>{params.data.fullname}</span>
-           */}
-          </div>
-        );
+      //   {
+      //     headerName: "Image",
+      //     field: "userimg",
+      //     filter: false,
+      //     width: 100,
+      //     setColumnVisible: false,
+      //     cellRendererFramework: (params) => {
+      //       return (
+      //         <div className="d-flex align-items-center cursor-pointer">
+      //           {params.data.userimg.map((i) => (
+      //             <img
+      //               className=" rounded-circle  mr-3"
+      //               src={i}
+      //               alt="user avatar"
+      //               height="40"
+      //               width="40"
+      //             />
+      //           ))}
+      //         </div>
+      //       );
+      //     },
+      //   },
+      {
+        headerName: "Appointment No.",
+        field: "appointmentType",
+        filter: true,
+        width: 200,
+        cellRendererFramework: (params) => {
+          return (
+            <div>
+              <span>{params.data.appointmentType}</span>
+            </div>
+          );
+        },
       },
-    },
       {
         headerName: "Patient Name",
         field: "patientname",
@@ -90,52 +88,6 @@ class Appointment extends React.Component {
         cellRendererFramework: (params) => {
           return (
             <div>
-
-              {/* 
-            <span>{params.data.fullname}</span>
-           */}
-             
-            </div>
-          );
-        },
-      },
-      {
-        headerName: "Doctor Name",
-        field: "doctorname",
-        filter: true,
-        width: 150,
-        cellRendererFramework: (params) => {
-          return (
-            <div>
-            {/* 
-            <span>{params.data.fullname}</span>
-           */}
-            </div>
-          );
-        },
-      },
-
-    //   {
-    //     headerName: "Email ID",
-    //     field: "email	",
-    //     filter: true,
-    //     width: 150,
-    //     cellRendererFramework: (params) => {
-    //       return (
-    //         <div className="d-flex align-items-center cursor-pointer">
-    //           <span>{params.data.email}</span>
-    //         </div>
-    //       );
-    //     },
-    //   },
-      {
-        headerName: "Status",
-        field: "status",
-        filter: true,
-        width: 180,
-        cellRendererFramework: (params) => {
-          return (
-            <div className="d-flex align-items-center cursor-pointer">
               {/* 
             <span>{params.data.fullname}</span>
            */}
@@ -143,6 +95,36 @@ class Appointment extends React.Component {
           );
         },
       },
+      // {
+      //   headerName: "Doctor Name",
+      //   field: "doctorname",
+      //   filter: true,
+      //   width: 150,
+      //   cellRendererFramework: (params) => {
+      //     return (
+      //       <div>
+
+      //       <span>{params.data.fullname}</span>
+
+      //       </div>
+      //     );
+      //   },
+      // },
+
+      //   {
+      //     headerName: "Email ID",
+      //     field: "email	",
+      //     filter: true,
+      //     width: 150,
+      //     cellRendererFramework: (params) => {
+      //       return (
+      //         <div className="d-flex align-items-center cursor-pointer">
+      //           <span>{params.data.email}</span>
+      //         </div>
+      //       );
+      //     },
+      //   },
+
       // {
       //   headerName: "DOB",
       //   field: "dob	",
@@ -156,33 +138,29 @@ class Appointment extends React.Component {
       //     );
       //   },
       // },
-//       {
-//         headerName: " Time",
-//         field: "time",
-//         filter: true,
-//         width: 120,
-//         cellRendererFramework: (params) => {
-//           return (
-//             <div>
-//             {/* 
-//               <span>{params.data?.createdAt.split("T")[1].split(".")[0]}</span>
-// */}
-
-//             </div>
-//           );
-//         },
-//       },
       {
-        headerName: " Date & Time",
-        field: "date&time",
+        headerName: " Time",
+        field: "time",
+        filter: true,
+        width: 120,
+        cellRendererFramework: (params) => {
+          return (
+            <div>
+              {/* <span>{params.data?.time.split("T")[1].split(".")[0]}</span> */}
+              <span>{params.data?.time}</span>
+            </div>
+          );
+        },
+      },
+      {
+        headerName: "Date",
+        field: "date",
         filter: true,
         width: 150,
         cellRendererFramework: (params) => {
           return (
             <div>
-              {/* 
-            <span>{params.data.fullname}</span>
-           */}
+              <span>{params.data.date}</span>
             </div>
           );
         },
@@ -196,6 +174,21 @@ class Appointment extends React.Component {
         cellRendererFramework: (params) => {
           return (
             <div>
+              {/* 
+            <span>{params.data.fullname}</span>
+           */}
+            </div>
+          );
+        },
+      },
+      {
+        headerName: "Status",
+        field: "status",
+        filter: true,
+        width: 180,
+        cellRendererFramework: (params) => {
+          return (
+            <div className="d-flex align-items-center cursor-pointer">
               {/* 
             <span>{params.data.fullname}</span>
            */}
@@ -224,7 +217,6 @@ class Appointment extends React.Component {
         cellRendererFramework: (params) => {
           return (
             <div className="actions cursor-pointer">
-               
               <Route
                 render={({ history }) => (
                   <Eye
@@ -237,7 +229,7 @@ class Appointment extends React.Component {
                   />
                 )}
               />
-             
+
               <Route
                 render={({ history }) => (
                   <Edit
@@ -250,7 +242,7 @@ class Appointment extends React.Component {
                   />
                 )}
               />
-              
+
               <Trash2
                 className="mr-50"
                 size="25px"
@@ -261,7 +253,6 @@ class Appointment extends React.Component {
                   // this.gridApi.updateRowData({ remove: selectedData });
                 }}
               />
-              
             </div>
           );
         },
@@ -269,11 +260,15 @@ class Appointment extends React.Component {
     ],
   };
   async componentDidMount() {
-    await axiosConfig.get(`/admin/alluser`).then((response) => {
-      let rowData = response.data.data;
-      console.log(rowData);
-      this.setState({ rowData });
-    });
+    // let userId = localStorage.getItem("userId");
+    let userId = "66823a083569357c75eab0e1";
+    await axiosConfig
+      .get(`/patientPanel-appointment/viewDocId/${userId}`)
+      .then((response) => {
+        let rowData = response.data.appointments;
+        console.log(rowData);
+        this.setState({ rowData });
+      });
   }
 
   async runthisfunction(id) {
@@ -332,13 +327,12 @@ class Appointment extends React.Component {
       console.log(rowData),
       (
         <div>
-        <h2>Appintment</h2>
+          <h2>Appintment</h2>
 
           <Row className="app-user-list">
             <Col sm="12"></Col>
             <Col sm="12">
               <Card>
-                
                 <CardBody>
                   {this.state.rowData === null ? null : (
                     <div className="ag-theme-material w-100 my-2 ag-grid-table">

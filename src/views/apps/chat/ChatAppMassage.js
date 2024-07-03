@@ -1,5 +1,4 @@
 import React from "react";
-
 import "../../../assets/scss/pages/astrochat.scss";
 
 class ChatAppMassage extends React.Component {
@@ -9,12 +8,11 @@ class ChatAppMassage extends React.Component {
   }
 
   render() {
-    console.log("props value", this.props.roomChatData);
     return (
       <>
-        {this.props.roomChatData.length
-          ? this.props.roomChatData
-              .map((chat, index) => {
+        {this.props?.roomChatData?.length
+          ? this.props?.roomChatData
+              ?.map((chat, index) => {
                 return (
                   <>
                     {chat.type === "user" ? (

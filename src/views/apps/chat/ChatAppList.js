@@ -6,22 +6,21 @@ class ChatAppList extends React.Component {
     super(props);
     this.state = {
       Index: "",
-
-      userChatList: this.props.userChatList,
+      userChatList: ["ddsd", "fdff", "fdfdffd", "fddfddf"],
       roomid: "",
     };
   }
 
   render() {
     const { userChatList } = this.props;
-    console.log("console.log", this.props.userChatList);
+    // console.log("console.log", this.props.userChatList);
     return (
       <div
         className="listofchat"
         style={{ listStyle: "none", marginLeft: "none", cursor: "pointer" }}
       >
-        {userChatList.length
-          ? userChatList.map((user, i) => {
+        {this.state.userChatList?.length
+          ? this.state.userChatList?.map((user, i) => {
               return (
                 <div
                   className="newmainheaading mt-1 mb-1"

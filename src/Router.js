@@ -38,44 +38,78 @@ const Addpages = lazy(() => import("./views/apps/Addpages/Addpages"));
 const AstrologerEarnReport = lazy(() =>
   import("./views/apps/packagemanager/AstrologerEarnReport")
 );
-const Adminreport = lazy(() =>
-  import("./views/apps/report/AdminEarning")
-);
+const Adminreport = lazy(() => import("./views/apps/report/AdminEarning"));
 // Route-based code splitting
-const analyticsDashboard = lazy(() =>
-  import("./views/dashboard/analytics/AnalyticsDashboard")
+// const analyticsDashboard = lazy(() =>
+//   import("./views/dashboard/analytics/AnalyticsDashboard")
+// );
+const dashboard = lazy(() => import("./AyuhDoctor/Dashboard.js"));
+const Appointment = lazy(() => import("./AyuhDoctor/Appointment"));
+const ChatMessage = lazy(() => import("./AyuhDoctor/chatApp/ChatMessage"));
+const ChatAppMassage = lazy(() => import("./views/apps/chat/Chatpage"));
+const Viewappointment = lazy(() => import("./AyuhDoctor/Viewappointment.js"));
+const Appointmentedit = lazy(() => import("./AyuhDoctor/Appointmentedit.js"));
+const callhistorys = lazy(() => import("./AyuhDoctor/Callhistory.js"));
+const Callhistoryview = lazy(() => import("./AyuhDoctor/Callhistoryview.js"));
+const Chathistorys = lazy(() => import("./AyuhDoctor/Chathistory.js"));
+const Chathistoryview = lazy(() => import("./AyuhDoctor/Chathistoryview.js"));
+const Videocallhistoryview = lazy(() =>
+  import("./AyuhDoctor/Videocallhistoryview.js")
 );
-const dashboard=lazy(()=>import('./AyuhDoctor/Dashboard.js'))
-const Appointment=lazy(()=>import('./AyuhDoctor/Appointment.js'))
-const Viewappointment=lazy(()=>import('./AyuhDoctor/Viewappointment.js'))
-const Appointmentedit=lazy(()=>import('./AyuhDoctor/Appointmentedit.js'))
-const callhistorys=lazy(()=>import('./AyuhDoctor/Callhistory.js'))
-const Callhistoryview=lazy(()=>import('./AyuhDoctor/Callhistoryview.js'))
-const Chathistorys=lazy(()=>import('./AyuhDoctor/Chathistory.js'))
-const Chathistoryview=lazy(()=>import('./AyuhDoctor/Chathistoryview.js'))
-const Videocallhistoryview=lazy(()=>import('./AyuhDoctor/Videocallhistoryview.js'))
-const Videocallhistory=lazy(()=>import('./AyuhDoctor/Videocallhistory.js'))
-const Physicalvisithistory=lazy(()=>import('./AyuhDoctor/Physicalvisithistory.js'))
-const Physicalvisithistoryview=lazy(()=>import('./AyuhDoctor/Physicalvisithistoryview.js'))
-const Prescriptionhistory=lazy(()=>import('./AyuhDoctor/Prescriptionhistory.js'))
-const Prescriptionhistoryview=lazy(()=>import('./AyuhDoctor/Prescriptionhistoryview.js'))
-const Pendingtestreport=lazy(()=>import('./AyuhDoctor/Pendingtestreport.js'))
-const Pendingtestreportview=lazy(()=>import('./AyuhDoctor/Pendingtestreportview.js'))
-const Deliveredtestreport=lazy(()=>import('./AyuhDoctor/Deliveredtestreport.js'))
-const Deliveredtestreportview=lazy(()=>import('./AyuhDoctor/Deliveredtestreportview.js'))
-const Consultingfeessetup=lazy(()=>import('./AyuhDoctor/Consultingfeessetup.js'))
-const Consultingfeessetupview=lazy(()=>import('./AyuhDoctor/Consultingfeessetupview.js'))
-const Wallethistory=lazy(()=>import('./AyuhDoctor/Wallethistory.js'))
-const Wallethistoryview=lazy(()=>import('./AyuhDoctor/Wallethistoryview.js'))
-const Transactionhistory=lazy(()=>import('./AyuhDoctor/Transactionhistory.js'))
-const Transactionhistoryview=lazy(()=>import('./AyuhDoctor/Transactionhistoryview.js'))
-const Withdrawrequest=lazy(()=>import('./AyuhDoctor/Withdrawrequest.js'))
-const Withdrawrequestview=lazy(()=>import('./AyuhDoctor/Withdrawrequestview.js'))
-const Editprofile=lazy(()=>import('./AyuhDoctor/Editprofile.js'))
-const Suggestcategoryanddiseases=lazy(()=>import('./AyuhDoctor/Suggestcategoryanddiseases.js'))
-const Suggestcategoryanddiseasesview=lazy(()=>import('./AyuhDoctor/Suggestcategoryanddiseasesview.js'))
-const Gallery=lazy(()=>import('./AyuhDoctor/Gallery.js'))
-const Galleryview=lazy(()=>import('./AyuhDoctor/Galleryview.js'))
+const Videocallhistory = lazy(() => import("./AyuhDoctor/Videocallhistory.js"));
+const Physicalvisithistory = lazy(() =>
+  import("./AyuhDoctor/Physicalvisithistory.js")
+);
+const Physicalvisithistoryview = lazy(() =>
+  import("./AyuhDoctor/Physicalvisithistoryview.js")
+);
+const Prescriptionhistory = lazy(() =>
+  import("./AyuhDoctor/Prescriptionhistory.js")
+);
+const Prescriptionhistoryview = lazy(() =>
+  import("./AyuhDoctor/Prescriptionhistoryview.js")
+);
+const Pendingtestreport = lazy(() =>
+  import("./AyuhDoctor/Pendingtestreport.js")
+);
+const Pendingtestreportview = lazy(() =>
+  import("./AyuhDoctor/Pendingtestreportview.js")
+);
+const Deliveredtestreport = lazy(() =>
+  import("./AyuhDoctor/Deliveredtestreport.js")
+);
+const Deliveredtestreportview = lazy(() =>
+  import("./AyuhDoctor/Deliveredtestreportview.js")
+);
+const Consultingfeessetup = lazy(() =>
+  import("./AyuhDoctor/Consultingfeessetup.js")
+);
+const Consultingfeessetupview = lazy(() =>
+  import("./AyuhDoctor/Consultingfeessetupview.js")
+);
+const Wallethistory = lazy(() => import("./AyuhDoctor/Wallethistory.js"));
+const Wallethistoryview = lazy(() =>
+  import("./AyuhDoctor/Wallethistoryview.js")
+);
+const Transactionhistory = lazy(() =>
+  import("./AyuhDoctor/Transactionhistory.js")
+);
+const Transactionhistoryview = lazy(() =>
+  import("./AyuhDoctor/Transactionhistoryview.js")
+);
+const Withdrawrequest = lazy(() => import("./AyuhDoctor/Withdrawrequest.js"));
+const Withdrawrequestview = lazy(() =>
+  import("./AyuhDoctor/Withdrawrequestview.js")
+);
+const Editprofile = lazy(() => import("./AyuhDoctor/Editprofile.js"));
+const Suggestcategoryanddiseases = lazy(() =>
+  import("./AyuhDoctor/Suggestcategoryanddiseases.js")
+);
+const Suggestcategoryanddiseasesview = lazy(() =>
+  import("./AyuhDoctor/Suggestcategoryanddiseasesview.js")
+);
+const Gallery = lazy(() => import("./AyuhDoctor/Gallery.js"));
+const Galleryview = lazy(() => import("./AyuhDoctor/Galleryview.js"));
 const ecommerceDashboard = lazy(() =>
   import("./views/dashboard/ecommerce/EcommerceDashboard")
 );
@@ -87,7 +121,9 @@ const productDetail = lazy(() =>
 const shop = lazy(() => import("./views/apps/ecommerce/shop/Shop"));
 
 const UserList = lazy(() => import("./views/apps/user/UserList"));
-const diagnosticlist =lazy(()=>import("./views/apps/user/Diagnosticlist.js"))
+const diagnosticlist = lazy(() =>
+  import("./views/apps/user/Diagnosticlist.js")
+);
 const pharmalist = lazy(() => import("./views/apps/user/Pharmalist.js"));
 const AddUser = lazy(() => import("./views/apps/user/AddUser"));
 const ViewUser = lazy(() => import("./views/apps/user/ViewUser"));
@@ -108,10 +144,18 @@ const AddEvent = lazy(() => import("./views/apps/event/addEvent/AddEvent"));
 const BookEventList = lazy(() =>
   import("./views/apps/event/bookEvent/BookEventList")
 );
-const Pendinglist=lazy(()=>import('./views/apps/event/bookEvent/Pendinglist.js'))
-const Acceptlist=lazy(()=>import('./views/apps/event/bookEvent/Acceptlist.js'))
-const Completedlist=lazy(()=>import('./views/apps/event/bookEvent/Completedlist.js'))
-const Cancelledlist=lazy(()=>import('./views/apps/event/bookEvent/Cancelledlist.js'))        
+const Pendinglist = lazy(() =>
+  import("./views/apps/event/bookEvent/Pendinglist.js")
+);
+const Acceptlist = lazy(() =>
+  import("./views/apps/event/bookEvent/Acceptlist.js")
+);
+const Completedlist = lazy(() =>
+  import("./views/apps/event/bookEvent/Completedlist.js")
+);
+const Cancelledlist = lazy(() =>
+  import("./views/apps/event/bookEvent/Cancelledlist.js")
+);
 const BookedpoojaList = lazy(() =>
   import("./views/apps/event/bookEvent/Bookedpoojalist")
 );
@@ -145,10 +189,18 @@ const CustomWallet = lazy(() => import("./views/apps/wallet/CustomWallet"));
 const WithdrawRequest = lazy(() =>
   import("./views/apps/Withdraw/WithdrawRequest")
 );
-const Userwithdraw=lazy(()=>import("./views/apps/Withdraw/Userwithdraw.js"))
-const Doctorwithdraw=lazy(()=>import('./views/apps/Withdraw/Doctorwithdraw.js'))
-const Pharmawithdraw=lazy(()=>import('./views/apps/Withdraw/Pharmawithdraw.js'))
-const Diagnosticswithdraw=lazy(()=>import('./views/apps/Withdraw/Diagnosticwithdraw.js'))
+const Userwithdraw = lazy(() =>
+  import("./views/apps/Withdraw/Userwithdraw.js")
+);
+const Doctorwithdraw = lazy(() =>
+  import("./views/apps/Withdraw/Doctorwithdraw.js")
+);
+const Pharmawithdraw = lazy(() =>
+  import("./views/apps/Withdraw/Pharmawithdraw.js")
+);
+const Diagnosticswithdraw = lazy(() =>
+  import("./views/apps/Withdraw/Diagnosticwithdraw.js")
+);
 //Transaction history//
 const TransactionHistory = lazy(() =>
   import("./views/apps/transaction/TransactionHistory")
@@ -179,12 +231,13 @@ const TodayCallHistory = lazy(() =>
   import("./views/apps/dashboardlist/TodayCallHistory")
 );
 
-
 // call management
 const CompleteCall = lazy(() =>
   import("./views/apps/callmanagement/CompleteCall")
 );
-const Callhistorymanagement=lazy(()=>import('./views/apps/Businessmanagement/Callshistorymanagement.js'))
+const Callhistorymanagement = lazy(() =>
+  import("./views/apps/Businessmanagement/Callshistorymanagement.js")
+);
 const CallHistroy = lazy(() =>
   import("./views/apps/callmanagement/CallHistory")
 );
@@ -221,9 +274,15 @@ const PharmaEarningList = lazy(() =>
 
 // rating and review
 const RatingList = lazy(() => import("./views/apps/reviewrating/RatingList"));
-const doctorrating=lazy(()=>import("./views/apps/reviewrating/Doctorrating.js"));
-const pharmarating=lazy(()=>import("./views/apps/reviewrating/Pharmarating.js"));
-const diagnostingsrating=lazy(()=>import("./views/apps/reviewrating/Diagnosticsrating.js"));
+const doctorrating = lazy(() =>
+  import("./views/apps/reviewrating/Doctorrating.js")
+);
+const pharmarating = lazy(() =>
+  import("./views/apps/reviewrating/Pharmarating.js")
+);
+const diagnostingsrating = lazy(() =>
+  import("./views/apps/reviewrating/Diagnosticsrating.js")
+);
 const RatingEdit = lazy(() => import("./views/apps/reviewrating/RatingEdit"));
 
 // Package management
@@ -266,10 +325,18 @@ const PackageList = lazy(() => import("./views/apps/poojapackage/PackageList"));
 const ProductList = lazy(() =>
   import("./views/apps/productmanager/product/ProductList")
 );
-const Pharmacategorylist=lazy(()=>import('./views/apps/productmanager/product/Pharmacategorylist.js'))
-const Medicinelist=lazy(()=>import('./views/apps/productmanager/product/Medicinelist.js'))
-const PharmaOrderlist=lazy(()=>import('./views/apps/productmanager/product/PharmaOrderList.js'))
-const Pharmamedicinlist=lazy(()=>import('./views/apps/productmanager/product/Pharmamedicinlist.js'))
+const Pharmacategorylist = lazy(() =>
+  import("./views/apps/productmanager/product/Pharmacategorylist.js")
+);
+const Medicinelist = lazy(() =>
+  import("./views/apps/productmanager/product/Medicinelist.js")
+);
+const PharmaOrderlist = lazy(() =>
+  import("./views/apps/productmanager/product/PharmaOrderList.js")
+);
+const Pharmamedicinlist = lazy(() =>
+  import("./views/apps/productmanager/product/Pharmamedicinlist.js")
+);
 const AddProduct = lazy(() =>
   import("./views/apps/productmanager/product/AddProduct")
 );
@@ -339,9 +406,9 @@ const CategoryList = lazy(() =>
 const SubcategoryList = lazy(() =>
   import("./views/apps/productmanager/category/Subcategorylist.js")
 );
-const diseaselist=lazy(()=>
-import("./views/apps/productmanager/category/Diseaselist.js")
-)
+const diseaselist = lazy(() =>
+  import("./views/apps/productmanager/category/Diseaselist.js")
+);
 const AddCategory = lazy(() =>
   import("./views/apps/productmanager/category/AddCategory")
 );
@@ -443,9 +510,15 @@ const ViewBlog = lazy(() => import("./views/apps/blogmngment/blog/ViewBlog"));
 const BlogCateList = lazy(() =>
   import("./views/apps/blogmngment/blogcategory/BlogCateList")
 );
-const Blogcategorylist=lazy(()=>import("./views/apps/blogmngment/blogcategory/Blogcategorylist.js"));
-const Addblogcategorylist=lazy(()=>import("./views/apps/blogmngment/blogcategory/Addblogcategorylist.js"));
-const Commentlist=lazy(()=>import("./views/apps/blogmngment/blogcategory/Commentlist.js"));
+const Blogcategorylist = lazy(() =>
+  import("./views/apps/blogmngment/blogcategory/Blogcategorylist.js")
+);
+const Addblogcategorylist = lazy(() =>
+  import("./views/apps/blogmngment/blogcategory/Addblogcategorylist.js")
+);
+const Commentlist = lazy(() =>
+  import("./views/apps/blogmngment/blogcategory/Commentlist.js")
+);
 const AddBlogCate = lazy(() =>
   import("./views/apps/blogmngment/blogcategory/AddBlogCate")
 );
@@ -670,7 +743,6 @@ const DrsuggestCategoryList = lazy(() =>
   import("./views/apps/productmanager/category/Drsuggestcategory")
 );
 
-
 const Drsubsuggest = lazy(() =>
   import("./views/apps/productmanager/category/Dr.subsuggest")
 );
@@ -723,12 +795,13 @@ const AppRoute = connect(mapStateToProps)(RouteConfig);
 class AppRouter extends React.Component {
   componentDidMount() {
     let data = localStorage.getItem("ad-token");
-    console.log("token data", data);
-    sessionStorage.clear();
+    // let data = localStorage.getItem("userId");
+    console.log("token", data);
+    // sessionStorage.clear();
     if (data === undefined || data === null) {
-      //history.push("/#/pages/login")
+      history.push("/#/pages/login");
 
-      window.location.replace("/#/pages/login");
+      // window.location.replace("/#/pages/login");
     }
   }
   render() {
@@ -745,38 +818,127 @@ class AppRouter extends React.Component {
               path="/ecommerce-dashboard"
               component={ecommerceDashboard}
             />
-            <AppRoute path='/Appointment-management/Appointment' component={Appointment}/>
-            <AppRoute path="/View-appointment/:id" component={Viewappointment}/> 
-            <AppRoute path="/Edit-appointment/:id" component={Appointmentedit}/>
-            <AppRoute path='/Appointment-management/call-history'  component={callhistorys}/>
-            <AppRoute path="/View-call-history/:id" component={Callhistoryview}/>
-            <AppRoute path='/Appointment-management/Chat-history' component={Chathistorys}/>
-            <AppRoute path="/View-chat-history/:id" component={Chathistoryview}/>
-            <AppRoute path="/View-video-call-history/:id" component={Videocallhistoryview}/>
-            <AppRoute path='/Appointment-management/Video-call-history' component={Videocallhistory}/>
-            <AppRoute path='/Appointment-management/Physical-visithistory' component={Physicalvisithistory}/>
-            <AppRoute path="/View-physical-visit-history/:id" component={Physicalvisithistoryview}/>
-            <AppRoute path='/Appointment-management/Prescription-history' component={Prescriptionhistory}/>
-            <AppRoute path="/View-Prescription-history/:id" component={Prescriptionhistoryview}/>
-            <AppRoute path='/Dianostics-management/Pendingtest-report' component={Pendingtestreport}/>
-            <AppRoute path='/View-Pending-test-report/:id' component={Pendingtestreportview}/>
-            <AppRoute path='/Dianostics-management/Delivered-test-report' component={Deliveredtestreport}/>
-            <AppRoute path='/View-Delivered-test-report/:id' component={Deliveredtestreportview}/>
-            <AppRoute path='/Finance-management/Consulting-fees-setup' component={Consultingfeessetup}/>
-            <AppRoute path='/View-Consulting-fees-setup/:id' component={Consultingfeessetupview}/>
-            <AppRoute path='/Finance-management/Wallet-history' component={Wallethistory}/>
-            <AppRoute path='/View-Wallet-history/:id' component={Wallethistoryview}/>
-            <AppRoute path='/Finance-management/Transaction-history' component={Transactionhistory}/>
-            <AppRoute path='/View-Transaction-history/:id' component={Transactionhistoryview}/>
-            <AppRoute path='/Finance-management/Withdraw-request' component={Withdrawrequest}/>
-            <AppRoute path='/View-Withdraw-request/:id' component={Withdrawrequestview}/>
-            <AppRoute path='/Finance-management/Edit-profile' component={Editprofile}/>
-            <AppRoute path='/View-Suggest-category-and-diseases/:id' component={Suggestcategoryanddiseasesview}/>
-            <AppRoute path='/Personal-management/Suggest-category-and-diseases' component={Suggestcategoryanddiseases}/>
-            <AppRoute path='/Personal-management/Gallery' component={Gallery}/>
-            <AppRoute path="/View-gallery/:id" component={Galleryview}/>
-            <AppRoute path='/userList/diagnostic-list' component={diagnosticlist}/>
-            <AppRoute path='/userList/pharma-list' component={pharmalist}/>
+            {/* <AppRoute path="/chat/ChatMessage" component={ChatMessage} /> */}
+            <AppRoute path="/chat/ChatMessage" component={ChatAppMassage} />
+            <AppRoute
+              path="/Appointment-management/Appointment"
+              component={Appointment}
+            />
+            <AppRoute
+              path="/View-appointment/:id"
+              component={Viewappointment}
+            />
+            <AppRoute
+              path="/Edit-appointment/:id"
+              component={Appointmentedit}
+            />
+            <AppRoute
+              path="/Appointment-management/call-history"
+              component={callhistorys}
+            />
+            <AppRoute
+              path="/View-call-history/:id"
+              component={Callhistoryview}
+            />
+            <AppRoute
+              path="/Appointment-management/Chat-history"
+              component={Chathistorys}
+            />
+            <AppRoute
+              path="/View-chat-history/:id"
+              component={Chathistoryview}
+            />
+            <AppRoute
+              path="/View-video-call-history/:id"
+              component={Videocallhistoryview}
+            />
+            <AppRoute
+              path="/Appointment-management/Video-call-history"
+              component={Videocallhistory}
+            />
+            <AppRoute
+              path="/Appointment-management/Physical-visithistory"
+              component={Physicalvisithistory}
+            />
+            <AppRoute
+              path="/View-physical-visit-history/:id"
+              component={Physicalvisithistoryview}
+            />
+            <AppRoute
+              path="/Appointment-management/Prescription-history"
+              component={Prescriptionhistory}
+            />
+            <AppRoute
+              path="/View-Prescription-history/:id"
+              component={Prescriptionhistoryview}
+            />
+            <AppRoute
+              path="/Dianostics-management/Pendingtest-report"
+              component={Pendingtestreport}
+            />
+            <AppRoute
+              path="/View-Pending-test-report/:id"
+              component={Pendingtestreportview}
+            />
+            <AppRoute
+              path="/Dianostics-management/Delivered-test-report"
+              component={Deliveredtestreport}
+            />
+            <AppRoute
+              path="/View-Delivered-test-report/:id"
+              component={Deliveredtestreportview}
+            />
+            <AppRoute
+              path="/Finance-management/Consulting-fees-setup"
+              component={Consultingfeessetup}
+            />
+            <AppRoute
+              path="/View-Consulting-fees-setup/:id"
+              component={Consultingfeessetupview}
+            />
+            <AppRoute
+              path="/Finance-management/Wallet-history"
+              component={Wallethistory}
+            />
+            <AppRoute
+              path="/View-Wallet-history/:id"
+              component={Wallethistoryview}
+            />
+            <AppRoute
+              path="/Finance-management/Transaction-history"
+              component={Transactionhistory}
+            />
+            <AppRoute
+              path="/View-Transaction-history/:id"
+              component={Transactionhistoryview}
+            />
+            <AppRoute
+              path="/Finance-management/Withdraw-request"
+              component={Withdrawrequest}
+            />
+            <AppRoute
+              path="/View-Withdraw-request/:id"
+              component={Withdrawrequestview}
+            />
+            <AppRoute
+              path="/Finance-management/Edit-profile"
+              component={Editprofile}
+            />
+            <AppRoute
+              path="/View-Suggest-category-and-diseases/:id"
+              component={Suggestcategoryanddiseasesview}
+            />
+            <AppRoute
+              path="/Personal-management/Suggest-category-and-diseases"
+              component={Suggestcategoryanddiseases}
+            />
+            <AppRoute path="/Personal-management/Gallery" component={Gallery} />
+            <AppRoute path="/View-gallery/:id" component={Galleryview} />
+            <AppRoute
+              path="/userList/diagnostic-list"
+              component={diagnosticlist}
+            />
+            <AppRoute path="/userList/pharma-list" component={pharmalist} />
             <AppRoute path="/userList/patient-list" component={UserList} />
             <AppRoute path="/app/user/addUser" component={AddUser} />
             <AppRoute path="/app/user/editUser/:id" component={EditUser} />
@@ -819,10 +981,19 @@ class AppRouter extends React.Component {
               path="/app/event/bookEvent/bookEventList"
               component={BookEventList}
             />
-            <AppRoute path='/appointments/Pending-list' component={Pendinglist}/>
-            <AppRoute path='/appointments/Accept-list' component={Acceptlist}/>
-            <AppRoute path='/appointments/Completed-list' component={Completedlist}/>
-            <AppRoute path='/appointments/Cancelled-list' component={Cancelledlist}/>
+            <AppRoute
+              path="/appointments/Pending-list"
+              component={Pendinglist}
+            />
+            <AppRoute path="/appointments/Accept-list" component={Acceptlist} />
+            <AppRoute
+              path="/appointments/Completed-list"
+              component={Completedlist}
+            />
+            <AppRoute
+              path="/appointments/Cancelled-list"
+              component={Cancelledlist}
+            />
             <AppRoute
               path="/app/event/bookEvent/bookedpoojalist"
               component={BookedpoojaList}
@@ -855,10 +1026,10 @@ class AppRouter extends React.Component {
               component={ProductList}
             />
             <AppRoute
-            path="/appmanagement/Dr-suggest-category"
-            component={DrsuggestCategoryList}
-          />
-          <AppRoute
+              path="/appmanagement/Dr-suggest-category"
+              component={DrsuggestCategoryList}
+            />
+            <AppRoute
               path="/appmanagement/Dr-sub-suggest"
               component={Drsubsuggest}
             />
@@ -866,10 +1037,22 @@ class AppRouter extends React.Component {
               path="/appmanagement/Dr-prescription"
               component={DrPrescription}
             />
-            <AppRoute path='/PharmaManagement/category-list' component={Pharmacategorylist}/>
-            <AppRoute path='/PharmaManagement/Medicine-list' component={Medicinelist}/>
-            <AppRoute path='/PharmaManagement/Order-list' component={PharmaOrderlist}/>
-            <AppRoute path='/PharmaManagement/Medicin-stock-list' component={Pharmamedicinlist}/>
+            <AppRoute
+              path="/PharmaManagement/category-list"
+              component={Pharmacategorylist}
+            />
+            <AppRoute
+              path="/PharmaManagement/Medicine-list"
+              component={Medicinelist}
+            />
+            <AppRoute
+              path="/PharmaManagement/Order-list"
+              component={PharmaOrderlist}
+            />
+            <AppRoute
+              path="/PharmaManagement/Medicin-stock-list"
+              component={Pharmamedicinlist}
+            />
             {/*kundli management */}
             <AppRoute
               path="/app/kundlimanage/kundlimatchlist"
@@ -972,8 +1155,14 @@ class AppRouter extends React.Component {
               path="/appmanagement/category-list"
               component={CategoryList}
             />
-            <AppRoute path='/appmanagement/disease-list' component={diseaselist}/>
-            <AppRoute path="/appmanagement/Subcategory-list" component={SubcategoryList}/>
+            <AppRoute
+              path="/appmanagement/disease-list"
+              component={diseaselist}
+            />
+            <AppRoute
+              path="/appmanagement/Subcategory-list"
+              component={SubcategoryList}
+            />
             <AppRoute
               path="/app/productmanager/category/addCategory"
               component={AddCategory}
@@ -987,14 +1176,11 @@ class AppRouter extends React.Component {
               component={ViewCategory}
             />
             {/* productmanager close  */}
+            <AppRoute path="/userList/doctor-list" component={AstrologerList} />
             <AppRoute
-              path="/userList/doctor-list"
-              component={AstrologerList}
+              path="/app/astrology/astrologerList"
+              component={AstrologerList1}
             />
-            <AppRoute
-            path="/app/astrology/astrologerList"
-            component={AstrologerList1}
-          />
             <AppRoute
               path="/app/astrology/addAstrologer"
               component={AddAstrologer}
@@ -1020,7 +1206,10 @@ class AppRouter extends React.Component {
               path="/app/callmanagement/completecall"
               component={CompleteCall}
             />
-            <AppRoute path='/Businessmanagement/Call-history' component={Callhistorymanagement}/>
+            <AppRoute
+              path="/Businessmanagement/Call-history"
+              component={Callhistorymanagement}
+            />
             <AppRoute
               path="/app/callmanagement/videocall"
               component={Videocall}
@@ -1106,17 +1295,29 @@ class AppRouter extends React.Component {
               path="/app/reviewrating/ratinglist"
               component={RatingList}
             />
-            <AppRoute path='/Ratings/Doctor-rating' component={doctorrating}/>
-            <AppRoute path='/Ratings/Pharma-rating' component={pharmarating}/>
-            <AppRoute path='/Ratings/diagnostics-rating' component={diagnostingsrating}/>
+            <AppRoute path="/Ratings/Doctor-rating" component={doctorrating} />
+            <AppRoute path="/Ratings/Pharma-rating" component={pharmarating} />
+            <AppRoute
+              path="/Ratings/diagnostics-rating"
+              component={diagnostingsrating}
+            />
             {/*chatintakeform  */}
             <AppRoute
               path="/appmanagement/Conversion-list"
               component={ChatInTakeList}
             />
-            <AppRoute path="/Financemanagement/Doctor-earning" component={DoctorEarningList}/>
-            <AppRoute path="/Financemanagement/Diagnostic-earning" component={DiagnosticEarningList}/>
-            <AppRoute path="/Financemanagement/Pharma-earning" component={PharmaEarningList}/>
+            <AppRoute
+              path="/Financemanagement/Doctor-earning"
+              component={DoctorEarningList}
+            />
+            <AppRoute
+              path="/Financemanagement/Diagnostic-earning"
+              component={DiagnosticEarningList}
+            />
+            <AppRoute
+              path="/Financemanagement/Pharma-earning"
+              component={PharmaEarningList}
+            />
             <AppRoute
               path="/app/reviewrating/ratingedit/:id"
               component={RatingEdit}
@@ -1284,9 +1485,18 @@ class AppRouter extends React.Component {
               path="/app/blogmngment/blogCategory/blogCateList"
               component={BlogCateList}
             />
-            <AppRoute path='/Blogmanagement/Category-list' component={Blogcategorylist}/>
-            <AppRoute path='/Blogmanagement/Add-blog-list' component={Addblogcategorylist}/>
-            <AppRoute path='/Blogmanagement/Comments-list' component={Commentlist}/>
+            <AppRoute
+              path="/Blogmanagement/Category-list"
+              component={Blogcategorylist}
+            />
+            <AppRoute
+              path="/Blogmanagement/Add-blog-list"
+              component={Addblogcategorylist}
+            />
+            <AppRoute
+              path="/Blogmanagement/Comments-list"
+              component={Commentlist}
+            />
             <AppRoute
               path="/app/blogmngment/blogCategory/addBlogCate"
               component={AddBlogCate}
@@ -1389,10 +1599,19 @@ class AppRouter extends React.Component {
               path="/app/withdraw/WithdrawRequest"
               component={WithdrawRequest}
             />
-            <AppRoute path='/Withdraw/User-withdraw' component={Userwithdraw}/>
-            <AppRoute path='/Withdraw/Doctor-withdraw' component={Doctorwithdraw}/>
-            <AppRoute path='/withdraw/Pharma-withdraw' component={Pharmawithdraw}/>
-            <AppRoute path='/withdraw/Diagnostics-withdraw' component={Diagnosticswithdraw}/>
+            <AppRoute path="/Withdraw/User-withdraw" component={Userwithdraw} />
+            <AppRoute
+              path="/Withdraw/Doctor-withdraw"
+              component={Doctorwithdraw}
+            />
+            <AppRoute
+              path="/withdraw/Pharma-withdraw"
+              component={Pharmawithdraw}
+            />
+            <AppRoute
+              path="/withdraw/Diagnostics-withdraw"
+              component={Diagnosticswithdraw}
+            />
             {/* Transaction history */}
             <AppRoute
               path="/app/transaction/transactionHistory"

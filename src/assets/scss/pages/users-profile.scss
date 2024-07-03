@@ -9,12 +9,12 @@
 // ================================================================================================
 
 // Core variables and mixins overrides
-@import '~bootstrap/scss/_functions.scss';
-@import '../core/variables/variables';
-@import '~bootstrap/scss/_variables.scss';
+@import "~bootstrap/scss/_functions.scss";
+@import "../core/variables/variables";
+@import "~bootstrap/scss/_variables.scss";
 
 // Overrides user variable
-@import '../core/variables/components-variables';
+@import "../core/variables/components-variables";
 
 // User profile Scss
 #user-profile {
@@ -105,6 +105,7 @@ li.lst-2 {
 span.lst-3 {
   text-align: right;
   float: right;
+  font-size: 12px;
 }
 button.btn-icon.rounded-circle.mr-1.btn.btn-primary.stpro {
   margin-left: 80px;

@@ -5,10 +5,8 @@ import Checkbox from "../../../../components/@vuexy/checkbox/CheckboxesVuexy";
 import { Mail, Lock, Check } from "react-feather";
 import { loginWithJWT } from "../../../../redux/actions/auth/loginActions";
 import { connect } from "react-redux";
-import axios from "axios";
 import { Route } from "react-router-dom";
 import swal from "sweetalert";
-import { Token } from "prismjs";
 import axiosConfig from "../../../../axiosConfig";
 class LoginJWT extends React.Component {
   constructor(props) {
@@ -69,35 +67,27 @@ class LoginJWT extends React.Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    localStorage.setItem("ad-token", " response.data.token");
-    localStorage.setItem("userId", "response.data.data._id");
-    localStorage.setItem("astroId", "response.data.data._id");
-    window.location.replace("/#/");
 
-    // axiosConfig
-    //   .post("admin/adminlogin", this.state)
-    //   .then((response) => {
-    //     console.log(response.data);
-
-    //     if (response.data.status === true) {
-    //       this.setState({ ad_token: response.data.token });
-    //       swal(response.data.msg);
-    //       localStorage.setItem("ad-token", response.data.token);
-    //       localStorage.setItem("userId", response.data.data._id);
-    //       localStorage.setItem("astroId", response.data.data._id);
-    //       window.location.replace("/#/");
-    //     } else if (response.data.status === 204) {
-    //       swal(response.data.msg);
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.response);
-    //     swal(
-    //       "error!",
-    //       "Invalied! Please enter valied Email. or Password",
-    //       "error"
-    //     );
-    //   });
+    axiosConfig
+      .post("/doctorPanel/login", this.state)
+      .then((response) => {
+        if (response.data?.status === true) {
+          this.setState({ ad_token: response?.data.user.token });
+          localStorage.setItem("ad-token", response?.data.user.token);
+          localStorage.setItem("userId", response.data.user._id);
+          localStorage.setItem("doctor", JSON.stringify(response.data.user));
+          swal(`${response.data.message}`);
+          window.location.replace("/");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        swal(
+          "error!",
+          "Invalied! Please enter valied Email. or Password",
+          "error"
+        );
+      });
   };
   render() {
     return (

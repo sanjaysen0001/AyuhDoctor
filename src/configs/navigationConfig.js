@@ -16,160 +16,181 @@ const navigationConfig = [
     navLink: "/",
   },
 
-  { 
+  {
     type: "groupHeader",
     groupTitle: "Appointment management",
   },
-   {
-      id: "appointment",
-      title: "Appointment",
-      type: "item",
-      icon: <Icon.Calendar  size={20} />,
-      navLink: "/Appointment-management/Appointment",
-     
-    },
-    {
-      id: "callhistory ",
-      title: "Call History ",
-      type: "item",
-      icon: <Icon.PhoneIncoming  size={20} />,
-      navLink: "/Appointment-management/call-history",
-     
-    },
-    {
-      id: "chathistory  ",
-      title: "Chat History  ",
-      type: "item",
-      icon: <Icon.MessageCircle  size={20} />,
-      navLink: "/Appointment-management/Chat-history",
-     
-    },
-    {
-      id: "videocallhistory   ",
-      title: "Video Call History   ",
-      type: "item",
-      icon: <Icon.Video  size={20} />,
-      navLink: "/Appointment-management/Video-call-history",
-     
-    },
-    {
-      id: "physicalvisithistory    ",
-      title: "Physical Visit History    ",
-      type: "item",
-      icon: <Icon.Users  size={20} />,
-      navLink: "/Appointment-management/Physical-visithistory",
-     
-    },
-    {
-      id: "prescriptionhistory    ",
-      title: "Prescription History    ",
-      type: "item",
-      icon: <Icon.FileText  size={20} />,
-      navLink: "/Appointment-management/Prescription-history",
-     
-    },
-    { 
-      type: "groupHeader",
-      groupTitle: "Personal Management ",
-    },
-     {
-        id: "suggestcategoryanddiseases",
-        title: "Suggest Category and Diseases",
-        type: "item",
-        icon: <Icon.Command  size={20} />,
-        navLink: "/Personal-management/Suggest-category-and-diseases",
-       
-      },
-      {
-        id: "gallery ",
-        title: "Gallery ",
-        type: "item",
-        icon: <Icon.Film  size={20} />,
-        navLink: "/Personal-management/Gallery",
-       
-      },
-      { 
-        type: "groupHeader",
-        groupTitle: "Diagnostics management ",
-      },
-       {
-          id: "pendingtestreport",
-          title: "Pending Test Report",
-          type: "item",
-          icon: <Icon.FileMinus  size={20} />,
-          navLink: "/Dianostics-management/Pendingtest-report",
-         
-        },
-        {
-          id: "deliveredtestreport ",
-          title: "Delivered Test Report ",
-          type: "item",
-          icon: <Icon.FilePlus  size={20} />,
-          navLink: "/Dianostics-management/Delivered-test-report",
-         
-        },
-        { 
-          type: "groupHeader",
-          groupTitle: "Finance Management ",
-        },
-         {
-            id: "consultingfeessetup ",
-            title: "Consulting Fees Setup ",
-            type: "item",
-            icon: <Icon.DollarSign  size={20} />,
-            navLink: "/Finance-management/Consulting-fees-setup",
-           
-          },
-          {
-            id: "wallethistory ",
-            title: "Wallet History ",
-            type: "item",
-            icon: <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
-            <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z"/>
-          </svg>,
-            navLink: "/Finance-management/Wallet-history",
-           
-          },
-          {
-            id: "transactionhistory  ",
-            title: "Transaction History ",
-            type: "item",
-            icon: <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0"/>
-            <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z"/>
-            <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/>
-            <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567"/>
-          </svg>,
-            navLink: "/Finance-management/Transaction-history",
-           
-          },
-          {
-            id: "withdrawrequest  ",
-            title: "Withdraw Request  ",
-            type: "item",
-            icon: <Icon.Repeat  size={20} />,
-            navLink: "/Finance-management/Withdraw-request",
-           
-          },
-          {
-            id: "editprofile  ",
-            title: "Edit Profile  ",
-            type: "item",
-            icon: <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-rolodex" viewBox="0 0 16 16">
-            <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
-            <path d="M1 1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h.5a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6.707L6 1.293A1 1 0 0 0 5.293 1zm0 1h4.293L6 2.707A1 1 0 0 0 6.707 3H15v10h-.085a1.5 1.5 0 0 0-2.4-.63C11.885 11.223 10.554 10 8 10c-2.555 0-3.886 1.224-4.514 2.37a1.5 1.5 0 0 0-2.4.63H1z"/>
-          </svg>,
-            navLink: "/Finance-management/Edit-profile",
-           
-          },
-          {
-            id: "logout  ",
-            title: "Logout  ",
-            type: "item",
-            icon: <Icon.LogOut  size={20} />,
-            // navLink: "/userList/patient-list",
-           
-          },
+  {
+    id: "appointment",
+    title: "Appointment",
+    type: "item",
+    icon: <Icon.Calendar size={20} />,
+    navLink: "/Appointment-management/Appointment",
+  },
+  {
+    id: "callhistory ",
+    title: "Call History ",
+    type: "item",
+    icon: <Icon.PhoneIncoming size={20} />,
+    navLink: "/Appointment-management/call-history",
+  },
+  {
+    id: "chathistory  ",
+    title: "Chat History  ",
+    type: "item",
+    icon: <Icon.MessageCircle size={20} />,
+    navLink: "/Appointment-management/Chat-history",
+  },
+  {
+    id: "chathistory1",
+    title: "Chating  ",
+    type: "item",
+    icon: <Icon.MessageCircle size={20} />,
+    navLink: "/chat/ChatMessage",
+  },
+  {
+    id: "videocallhistory   ",
+    title: "Video Call History   ",
+    type: "item",
+    icon: <Icon.Video size={20} />,
+    navLink: "/Appointment-management/Video-call-history",
+  },
+  {
+    id: "physicalvisithistory    ",
+    title: "Physical Visit History    ",
+    type: "item",
+    icon: <Icon.Users size={20} />,
+    navLink: "/Appointment-management/Physical-visithistory",
+  },
+  {
+    id: "prescriptionhistory    ",
+    title: "Prescription History    ",
+    type: "item",
+    icon: <Icon.FileText size={20} />,
+    navLink: "/Appointment-management/Prescription-history",
+  },
+  {
+    type: "groupHeader",
+    groupTitle: "Personal Management ",
+  },
+  {
+    id: "suggestcategoryanddiseases",
+    title: "Suggest Category and Diseases",
+    type: "item",
+    icon: <Icon.Command size={20} />,
+    navLink: "/Personal-management/Suggest-category-and-diseases",
+  },
+  {
+    id: "gallery ",
+    title: "Gallery ",
+    type: "item",
+    icon: <Icon.Film size={20} />,
+    navLink: "/Personal-management/Gallery",
+  },
+  {
+    type: "groupHeader",
+    groupTitle: "Diagnostics management ",
+  },
+  {
+    id: "pendingtestreport",
+    title: "Pending Test Report",
+    type: "item",
+    icon: <Icon.FileMinus size={20} />,
+    navLink: "/Dianostics-management/Pendingtest-report",
+  },
+  {
+    id: "deliveredtestreport ",
+    title: "Delivered Test Report ",
+    type: "item",
+    icon: <Icon.FilePlus size={20} />,
+    navLink: "/Dianostics-management/Delivered-test-report",
+  },
+  {
+    type: "groupHeader",
+    groupTitle: "Finance Management ",
+  },
+  {
+    id: "consultingfeessetup ",
+    title: "Consulting Fees Setup ",
+    type: "item",
+    icon: <Icon.DollarSign size={20} />,
+    navLink: "/Finance-management/Consulting-fees-setup",
+  },
+  {
+    id: "wallethistory ",
+    title: "Wallet History ",
+    type: "item",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        fill="currentColor"
+        class="bi bi-wallet2"
+        viewBox="0 0 16 16"
+      >
+        <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z" />
+      </svg>
+    ),
+    navLink: "/Finance-management/Wallet-history",
+  },
+  {
+    id: "transactionhistory  ",
+    title: "Transaction History ",
+    type: "item",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        fill="currentColor"
+        class="bi bi-cash-coin"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0"
+        />
+        <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z" />
+        <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z" />
+        <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567" />
+      </svg>
+    ),
+    navLink: "/Finance-management/Transaction-history",
+  },
+  {
+    id: "withdrawrequest  ",
+    title: "Withdraw Request  ",
+    type: "item",
+    icon: <Icon.Repeat size={20} />,
+    navLink: "/Finance-management/Withdraw-request",
+  },
+  // {
+  //   id: "editprofile  ",
+  //   title: "Edit Profile  ",
+  //   type: "item",
+  //   icon: (
+  //     <svg
+  //       xmlns="http://www.w3.org/2000/svg"
+  //       width="18"
+  //       height="18"
+  //       fill="currentColor"
+  //       class="bi bi-person-rolodex"
+  //       viewBox="0 0 16 16"
+  //     >
+  //       <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+  //       <path d="M1 1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h.5a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6.707L6 1.293A1 1 0 0 0 5.293 1zm0 1h4.293L6 2.707A1 1 0 0 0 6.707 3H15v10h-.085a1.5 1.5 0 0 0-2.4-.63C11.885 11.223 10.554 10 8 10c-2.555 0-3.886 1.224-4.514 2.37a1.5 1.5 0 0 0-2.4.63H1z" />
+  //     </svg>
+  //   ),
+  //   navLink: "/Finance-management/Edit-profile",
+  // },
+  {
+    id: "logout  ",
+    title: "Logout  ",
+    type: "item",
+    icon: <Icon.LogOut size={20} />,
+    // navLink: "/userList/patient-list",
+  },
 
   // {
   //   id: "Appointmentmanagement",
@@ -448,7 +469,6 @@ const navigationConfig = [
   //   ],
   // },
 
-
   // {
   //   type: "groupHeader",
   //   groupTitle: "Order Management",
@@ -657,7 +677,6 @@ const navigationConfig = [
   //   navLink: "/app/askQuestionList",
   // },
 
-
   // {
   //   id: "diagnosticsmanagement",
   //   title: "Diagnostics Management",
@@ -703,7 +722,6 @@ const navigationConfig = [
   //   groupTitle: "Pharmacy Management",
   // },
 
-
   // {
   //   id: "ratinglist",
   //   title: "Rating and Review",
@@ -738,7 +756,6 @@ const navigationConfig = [
   //     },
   //   ],
   // },
-
 
   // {
   //   id: "blogmanagement",
@@ -896,7 +913,6 @@ const navigationConfig = [
   //   ],
   // },
 
-
   // {
   //   id: "Withdrawmanagement ",
   //   title: "Withdraw Management ",
@@ -937,7 +953,6 @@ const navigationConfig = [
   //     },
   //   ],
   // },
-
 
   // {
   //   id: "Businessmanagement",
@@ -1128,129 +1143,129 @@ const navigationConfig = [
   //   navLink: "/app/coupons/couponslist",
   // },
 
-//   {
-//     id: "withdrawrequest",
-//     title: "Withdraw Request ",
-//     type: "item",
-//     icon: <GrTransaction color="red" size={20} />,
-//     permissions: ["admin", "editor"],
-//     navLink: "/app/withdraw/WithdrawRequest",
-//   },
-//   {
-//     id: "blogmngment",
-//     title: "Blog Management",
-//     type: "collapse",
-//     icon: <Icon.Package color="blue" size={20} />,
-//     children: [
-//       {
-//         id: "blogList",
-//         title: "Blog list",
-//         type: "item",
-//         icon: <Icon.Image size={20} />,
-//         permissions: ["admin", "editor"],
-//         // navLink: "/app/blogmngment/blog/blogList",
-//       },
-//       {
-//         id: "blogCateList",
-//         title: "Blog Category",
-//         type: "item",
-//         icon: <Icon.Image size={20} />,
-//         permissions: ["admin", "editor"],
-//         // navLink: "/app/blogmngment/blogCategory/blogCateList",
-//       },
-//     ],
-//   },
+  //   {
+  //     id: "withdrawrequest",
+  //     title: "Withdraw Request ",
+  //     type: "item",
+  //     icon: <GrTransaction color="red" size={20} />,
+  //     permissions: ["admin", "editor"],
+  //     navLink: "/app/withdraw/WithdrawRequest",
+  //   },
+  //   {
+  //     id: "blogmngment",
+  //     title: "Blog Management",
+  //     type: "collapse",
+  //     icon: <Icon.Package color="blue" size={20} />,
+  //     children: [
+  //       {
+  //         id: "blogList",
+  //         title: "Blog list",
+  //         type: "item",
+  //         icon: <Icon.Image size={20} />,
+  //         permissions: ["admin", "editor"],
+  //         // navLink: "/app/blogmngment/blog/blogList",
+  //       },
+  //       {
+  //         id: "blogCateList",
+  //         title: "Blog Category",
+  //         type: "item",
+  //         icon: <Icon.Image size={20} />,
+  //         permissions: ["admin", "editor"],
+  //         // navLink: "/app/blogmngment/blogCategory/blogCateList",
+  //       },
+  //     ],
+  //   },
 
-//   {
-//     id: "commissionset",
-//     title: "Commission Set",
-//     type: "item",
-//     // icon: <Icon.DollarSign size={20} />,
-//     icon: <FcMoneyTransfer color="" size={20} />,
-//     permissions: ["admin", "editor"],
-//     // navLink: "/app/packagemanager/commission",
-//   },
-//   {
-//     id: "commissionforall",
-//     title: "My Commission ",
-//     type: "item",
-//     // icon: <Icon.DollarSign size={20} />,
-//     icon: <FcMoneyTransfer color="" size={20} />,
-//     permissions: ["admin", "editor"],
-//     navLink: "/app/packagemanager/commissioncall",
-//   },
-//   {
-//     id: "payouts",
-//     title: "Payouts",
-//     type: "item",
-//     icon: <GiPayMoney color="green" size={20} />,
-//     permissions: ["admin", "editor"],
-//     navLink: "/app/report/payoutlist",
-//   },
+  //   {
+  //     id: "commissionset",
+  //     title: "Commission Set",
+  //     type: "item",
+  //     // icon: <Icon.DollarSign size={20} />,
+  //     icon: <FcMoneyTransfer color="" size={20} />,
+  //     permissions: ["admin", "editor"],
+  //     // navLink: "/app/packagemanager/commission",
+  //   },
+  //   {
+  //     id: "commissionforall",
+  //     title: "My Commission ",
+  //     type: "item",
+  //     // icon: <Icon.DollarSign size={20} />,
+  //     icon: <FcMoneyTransfer color="" size={20} />,
+  //     permissions: ["admin", "editor"],
+  //     navLink: "/app/packagemanager/commissioncall",
+  //   },
+  //   {
+  //     id: "payouts",
+  //     title: "Payouts",
+  //     type: "item",
+  //     icon: <GiPayMoney color="green" size={20} />,
+  //     permissions: ["admin", "editor"],
+  //     navLink: "/app/report/payoutlist",
+  //   },
 
-//   {
-//     id: "transaction",
-//     title: "All Transaction",
-//     type: "item",
-//     icon: <FaRupeeSign color="blue" size={20} />,
-//     permissions: ["admin", "editor"],
-//     navLink: "/app/transaction/transactionHistory",
-//   },
+  //   {
+  //     id: "transaction",
+  //     title: "All Transaction",
+  //     type: "item",
+  //     icon: <FaRupeeSign color="blue" size={20} />,
+  //     permissions: ["admin", "editor"],
+  //     navLink: "/app/transaction/transactionHistory",
+  //   },
 
-//   // {
-//   //   id: "ratinglist",
-//   //   title: "Doctor Rating and Review",
-//   //   type: "item",
-//   //   icon: <Icon.Star fill="yellow" size={20} />,
-//   //   permissions: ["admin", "editor"],
-//   //   navLink: "/app/reviewrating/ratinglist",
-//   // },
+  //   // {
+  //   //   id: "ratinglist",
+  //   //   title: "Doctor Rating and Review",
+  //   //   type: "item",
+  //   //   icon: <Icon.Star fill="yellow" size={20} />,
+  //   //   permissions: ["admin", "editor"],
+  //   //   navLink: "/app/reviewrating/ratinglist",
+  //   // },
 
-//   {
-//     type: "groupHeader",
-//     groupTitle: "Add Videos",
-//   },
-//   {
-//     id: "videoonweb",
-//     title: "Add Youtube video",
-//     type: "item",
-//     icon: <Icon.Video fill="red" color="red" size={20} />,
-//     permissions: ["admin", "editor"],
-//     navLink: "/app/youtubevideoadd",
-//   },
-//   // {
-//   //   type: "groupHeader",
-//   //   groupTitle: "Add Question Package",
-//   // },
-//   // {
-//   //   id: "Addpackage",
-//   //   title: "Add Question Package",
-//   //   type: "item",
-//   //   icon: <Icon.ArrowDownCircle size={20} />,
-//   //   permissions: ["admin", "editor"],
-//   //   navLink: "/app/user/addpackage",
-//   // },
-//   // {
-//   //   id: "walletcustom",
-//   //   title: "Customer Wallet",
-//   //   type: "item",
-//   //   icon: <Icon.DollarSign size={20} />,
-//   //   permissions: ["admin", "editor"],
-//   //   navLink: "/app/wallet/walletcustom",
-//   // },
-//   // {
-//   //   id: "wallettansaction",
-//   //   title: "Wallet Transaction",
-//   //   type: "item",
-//   //   icon: <Icon.DollarSign size={20} />,
-//   //   permissions: ["admin", "editor"],
-//   //   navLink: "/app/wallet/wallettransaction",
-//   // },
+  //   {
+  //     type: "groupHeader",
+  //     groupTitle: "Add Videos",
+  //   },
+  //   {
+  //     id: "videoonweb",
+  //     title: "Add Youtube video",
+  //     type: "item",
+  //     icon: <Icon.Video fill="red" color="red" size={20} />,
+  //     permissions: ["admin", "editor"],
+  //     navLink: "/app/youtubevideoadd",
+  //   },
+  //   // {
+  //   //   type: "groupHeader",
+  //   //   groupTitle: "Add Question Package",
+  //   // },
+  //   // {
+  //   //   id: "Addpackage",
+  //   //   title: "Add Question Package",
+  //   //   type: "item",
+  //   //   icon: <Icon.ArrowDownCircle size={20} />,
+  //   //   permissions: ["admin", "editor"],
+  //   //   navLink: "/app/user/addpackage",
+  //   // },
+  //   // {
+  //   //   id: "walletcustom",
+  //   //   title: "Customer Wallet",
+  //   //   type: "item",
+  //   //   icon: <Icon.DollarSign size={20} />,
+  //   //   permissions: ["admin", "editor"],
+  //   //   navLink: "/app/wallet/walletcustom",
+  //   // },
+  //   // {
+  //   //   id: "wallettansaction",
+  //   //   title: "Wallet Transaction",
+  //   //   type: "item",
+  //   //   icon: <Icon.DollarSign size={20} />,
+  //   //   permissions: ["admin", "editor"],
+  //   //   navLink: "/app/wallet/wallettransaction",
+  //   // },
 
-//   {
-//     type: "groupHeader",
-//     groupTitle: "CMS",
-//   },
+  //   {
+  //     type: "groupHeader",
+  //     groupTitle: "CMS",
+  //   },
 
   // {
   //   id: "pagesetup",
